@@ -14,7 +14,7 @@ public class WallScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		// fade and zoom the camera in when the wall is clicked
+		// fade and zoom the camera in when the wall is clicked and the timer is not done
 		if (fadeZoom && fadeTimer > 0.0f) {
 			// camera zoom
 			gameCamera.GetComponent<Camera>().orthographicSize -= .03f;
@@ -27,6 +27,11 @@ public class WallScript : MonoBehaviour {
 			// fade wall
 			fadeTimer -= (Time.deltaTime * .5f);
 			gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, fadeTimer);
+		}
+
+		// Move the wall out of the way once it is faded
+		if (fadeTimer <= 0.0f) {
+			gameObject.transform.position = new Vector3(-1000, 0, 0);
 		}
 	}
 
