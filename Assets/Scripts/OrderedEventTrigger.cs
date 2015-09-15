@@ -8,6 +8,9 @@ public class OrderedEventTrigger : MonoBehaviour {
 	public GameObject item02;
 	public GameObject item03;
 
+	private Vector3 screenPoint;
+	private Vector3 offset;
+
 	// progress through the order
 	int progress;
 
@@ -29,6 +32,7 @@ public class OrderedEventTrigger : MonoBehaviour {
 				else { progress = 0; }
 
 				Debug.Log(progress);
+                Debug.Log("!");
 			}
 			if (item02.GetComponent<ItemScript>().mousedOver)
 			{
