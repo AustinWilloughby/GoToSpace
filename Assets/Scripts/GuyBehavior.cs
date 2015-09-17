@@ -10,8 +10,8 @@ public class GuyBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        leftBound = transform.position.x - 1.3f;
-        rightBound = transform.position.x + 1.8f;
+        leftBound = transform.position.x - 1.0f;
+        rightBound = transform.position.x + 1.3f;
         isWalking = false;
         facingRight = true;
 	}

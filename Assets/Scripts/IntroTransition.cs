@@ -3,7 +3,7 @@ using System.Collections;
 
 public class IntroTransition : MonoBehaviour {
 
-    float timer = 1.0f;
+    //float timer = 1.0f;
 
 	// Use this for initialization
 	void Start () {
