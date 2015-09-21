@@ -15,7 +15,8 @@ public class WallScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// fade and zoom the camera in when the wall is clicked and the timer is not done
-		if (fadeZoom && fadeTimer > 0.0f) {
+        if (fadeZoom && fadeTimer > 0.0f && gameCamera.transform.position.y <= -.37f)
+        {
 			// camera zoom
 			gameCamera.GetComponent<Camera>().orthographicSize -= .03f;
 
