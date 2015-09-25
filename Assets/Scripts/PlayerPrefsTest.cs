@@ -9,14 +9,19 @@ public class PlayerPrefsTest : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Vector3 temp = new Vector3 (PlayerPrefs.GetFloat ("item01x"), PlayerPrefs.GetFloat ("item01y"), -1.5f);
-		item01.transform.position = temp;
+        if (PlayerPrefs.GetInt("FirstLaunch") == 1)
+        {
+            Vector3 temp = new Vector3(PlayerPrefs.GetFloat("item01x"), PlayerPrefs.GetFloat("item01y"), -1.5f);
+            item01.transform.position = temp;
 
-				temp = new Vector3 (PlayerPrefs.GetFloat ("item02x"), PlayerPrefs.GetFloat ("item02y"), -1.5f);
-		item02.transform.position = temp;
+            temp = new Vector3(PlayerPrefs.GetFloat("item02x"), PlayerPrefs.GetFloat("item02y"), -1.5f);
+            item02.transform.position = temp;
 
-				temp = new Vector3 (PlayerPrefs.GetFloat ("item03x"), PlayerPrefs.GetFloat ("item03y"), -1.5f);
-		item03.transform.position = temp;
+            temp = new Vector3(PlayerPrefs.GetFloat("item03x"), PlayerPrefs.GetFloat("item03y"), -1.5f);
+            item03.transform.position = temp;
+        }
+
+        PlayerPrefs.SetInt("FirstLaunch", 1);
 	}
 	
 	// Update is called once per frame
