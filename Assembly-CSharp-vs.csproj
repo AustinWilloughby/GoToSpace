@@ -61,7 +61,9 @@
      <Compile Include="Assets\Scripts\InventoryTest.cs" />
      <Compile Include="Assets\Scripts\Main Scene Scripts\CloudScript.cs" />
      <Compile Include="Assets\Scripts\Main Scene Scripts\GuyBehavior.cs" />
+     <Compile Include="Assets\Scripts\Main Scene Scripts\MaterialScript.cs" />
      <Compile Include="Assets\Scripts\Main Scene Scripts\WallScript.cs" />
+     <Compile Include="Assets\Scripts\Main Scene Scripts\WorkbenchScript.cs" />
      <Compile Include="Assets\Scripts\MusicSingleton.cs" />
      <Compile Include="Assets\Scripts\Nail Minigame Scripts\ItemScript.cs" />
      <Compile Include="Assets\Scripts\Nail Minigame Scripts\NailGameController.cs" />
