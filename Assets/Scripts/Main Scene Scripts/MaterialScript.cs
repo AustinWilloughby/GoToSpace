@@ -6,9 +6,13 @@ public class MaterialScript : MonoBehaviour
     private bool fading;
     private Vector4 color;
 
+
+    private int neededProg;
+    private int currentProg;
     // Use this for initialization
     void Start()
     {
+        fading = false;
         tag = "CraftingMat";
     }
 
@@ -21,14 +25,26 @@ public class MaterialScript : MonoBehaviour
             GetComponent<SpriteRenderer>().color = color;
             if (color.w <= 0)
             {
-                GameObject.Destroy(this);
+                if (currentProg == neededProg)
+                {
+                    Application.LoadLevel("Minigame1");
+                }
+                else
+                {
+                    GameObject.Destroy(this);
+                }
             }
         }
     }
 
-    public void ObjectToWorkbench()
+    public void ObjectToWorkbench(int currentProgress, int neededProgress)
     {
-        color = GetComponent<SpriteRenderer>().color;
-        fading = true;
+        if (!fading)
+        {
+            neededProg = neededProgress;
+            currentProg = currentProgress;
+            color = GetComponent<SpriteRenderer>().color;
+            fading = true;
+        }
     }
 }

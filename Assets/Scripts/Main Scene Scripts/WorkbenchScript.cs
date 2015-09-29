@@ -3,6 +3,7 @@ using System.Collections;
 
 public class WorkbenchScript : MonoBehaviour
 {
+    public int numberMaterials = 3;
     private int progress = 0;
     // Use this for initialization
     void Start()
@@ -20,9 +21,9 @@ public class WorkbenchScript : MonoBehaviour
     {
         if (col.gameObject.tag == "CraftingMat")
         {
-            col.gameObject.GetComponent<MaterialScript>().ObjectToWorkbench();
-            col.tag = "Untagged"; 
             progress++;
+            col.gameObject.GetComponent<MaterialScript>().ObjectToWorkbench(progress, numberMaterials);
+            col.tag = "Untagged"; 
         }
     }
 }
