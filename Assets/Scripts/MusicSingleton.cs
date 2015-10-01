@@ -43,8 +43,19 @@ public class MusicSingleton : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        if (audioPlayer.volume != volume)
+        {
+            if (volume > 1)
+            {
+                volume = 1;
+            }
+            if (volume < 0)
+            {
+                volume = 0;
+            }
+        }
         audioPlayer = GetComponent<AudioSource>();
-        audioPlayer.volume = volume / 100;
+        audioPlayer.volume = volume;
         audioPlayer.clip = music[currentSongIndex % music.Count];
         lastIndex = currentSongIndex;
         audioPlayer.Play();
@@ -71,16 +82,16 @@ public class MusicSingleton : MonoBehaviour
     {
         if (audioPlayer.volume != volume)
         {
-            if (volume > 100)
+            if (volume > 1)
             {
-                volume = 100;
+                volume = 1;
             }
             if (volume < 0)
             {
                 volume = 0;
             }
             audioPlayer.Pause();
-            audioPlayer.volume = volume / 100;
+            audioPlayer.volume = volume;
             audioPlayer.UnPause();
         }
     }
