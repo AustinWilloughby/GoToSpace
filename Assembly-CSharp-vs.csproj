@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\CameraScale.cs" />
      <Compile Include="Assets\Scripts\InventoryTest.cs" />
      <Compile Include="Assets\Scripts\Main Scene Scripts\CloudScript.cs" />
+     <Compile Include="Assets\Scripts\Main Scene Scripts\DoorScript.cs" />
      <Compile Include="Assets\Scripts\Main Scene Scripts\GuyBehavior.cs" />
      <Compile Include="Assets\Scripts\Main Scene Scripts\MaterialScript.cs" />
      <Compile Include="Assets\Scripts\Main Scene Scripts\WallScript.cs" />
