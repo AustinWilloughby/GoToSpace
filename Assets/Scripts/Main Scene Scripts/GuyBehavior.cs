@@ -43,10 +43,13 @@ public class GuyBehavior : MonoBehaviour
     //Initializes the guy walking to a position
     public void MakeWalkToPosition(Vector3 targetPos)
     {
-        WalkingToPosition = true;
-        initWalkPosition = (Vector2)transform.position;
-        targetPosition = (Vector2)targetPos;
-        walkTime = Vector2.Distance((Vector2)targetPos, (Vector2)transform.position) * 2;
+        if ((Vector2)targetPos != targetPosition)
+        {
+            WalkingToPosition = true;
+            initWalkPosition = (Vector2)transform.position;
+            targetPosition = (Vector2)targetPos;
+            walkTime = Vector2.Distance((Vector2)targetPos, (Vector2)transform.position) * 2;
+        }
     }
 
     //Handles moving the guy to target position
