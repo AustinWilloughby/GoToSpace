@@ -5,13 +5,11 @@ public class DoorScript : MonoBehaviour
 {
     private bool doorClicked = false;
     private GameObject guy;
-    private Transform guyTarget;
 
     // Use this for initialization
     void Start()
     {
         guy = GameObject.Find("Guy");
-        guyTarget = transform.GetChild(0);
     }
 
     // Update is called once per frame
@@ -28,13 +26,13 @@ public class DoorScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             doorClicked = true;
-            guy.GetComponent<GuyBehavior>().MakeWalkToPosition(guyTarget.position);
+            guy.GetComponent<GuyBehavior>().MakeWalkToPosition(transform.position);
         }
     }
 
     void CheckForSceneTransition()
     {
-        if (Vector2.Distance((Vector2)guy.transform.position, (Vector2)transform.position) < .13f)
+        if (Mathf.Abs(transform.position.x - guy.transform.position.x) < .05f)
         {
             Application.LoadLevel("StreetScene");
         }

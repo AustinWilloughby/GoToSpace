@@ -54,7 +54,6 @@ public class MaterialScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !guy.GetComponent<GuyBehavior>().WalkingToPosition)
         {
             guy.GetComponent<GuyBehavior>().MakeWalkToPosition(transform.position);
-            Debug.Log("Walk to Item");
         }
     }
 }

@@ -11,10 +11,8 @@ public class GuyBehavior : MonoBehaviour
     public bool facingRight;
 
     public bool WalkingToPosition;
-    private Vector2 initWalkPosition;
     private Vector2 targetPosition;
     private float walkTimer;
-    private float walkTime;
 
     // Use this for initialization
     void Start()
@@ -51,9 +49,7 @@ public class GuyBehavior : MonoBehaviour
         if (!WalkingToPosition)
         {
             WalkingToPosition = true;
-            initWalkPosition = (Vector2)transform.position;
             targetPosition = (Vector2)targetPos;
-            walkTime = Vector2.Distance((Vector2)targetPos, (Vector2)transform.position) * 2;
         }
     }
 
