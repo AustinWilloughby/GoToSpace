@@ -37,13 +37,18 @@ public class GuyBehavior : MonoBehaviour
         else
         {
             WalkToPosition();
+            if (Mathf.Abs(targetPosition.x - transform.position.x) < .05f)
+            {
+                WalkingToPosition = false;
+                
+            }
         }
     }
 
     //Initializes the guy walking to a position
     public void MakeWalkToPosition(Vector3 targetPos)
     {
-        if ((Vector2)targetPos != targetPosition)
+        if (!WalkingToPosition)
         {
             WalkingToPosition = true;
             initWalkPosition = (Vector2)transform.position;
@@ -58,17 +63,19 @@ public class GuyBehavior : MonoBehaviour
         if (Mathf.Abs(transform.position.x - targetPosition.x) > .02f)
         {
             isWalking = true;
+            Vector3 newPos;
+            newPos.x = 0;
             if (transform.position.x < targetPosition.x)
             {
                 facingRight = true;
+                newPos.x = transform.position.x + (.5f * Time.deltaTime);
             }
             else
             {
                 facingRight = false;
+                newPos.x = transform.position.x - (.5f * Time.deltaTime);
             }
             walkTimer += Time.deltaTime;
-            Vector3 newPos;
-            newPos.x = Mathf.Lerp(initWalkPosition.x, targetPosition.x, walkTimer / walkTime);
             newPos.y = transform.position.y;
             newPos.z = transform.position.z;
             transform.position = newPos;

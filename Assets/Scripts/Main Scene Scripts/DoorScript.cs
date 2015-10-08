@@ -5,11 +5,13 @@ public class DoorScript : MonoBehaviour
 {
     private bool doorClicked = false;
     private GameObject guy;
+    private Transform guyTarget;
 
     // Use this for initialization
     void Start()
     {
         guy = GameObject.Find("Guy");
+        guyTarget = transform.GetChild(0);
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class DoorScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             doorClicked = true;
-            guy.GetComponent<GuyBehavior>().MakeWalkToPosition(transform.position);
+            guy.GetComponent<GuyBehavior>().MakeWalkToPosition(guyTarget.position);
         }
     }
 
