@@ -5,13 +5,14 @@ public class MaterialScript : MonoBehaviour
 {
     private bool fading;
     private Vector4 color;
-
+    private GameObject guy;
 
     private int neededProg;
     private int currentProg;
     // Use this for initialization
     void Start()
     {
+        guy = GameObject.Find("Guy");
         fading = false;
         tag = "CraftingMat";
     }
@@ -45,6 +46,15 @@ public class MaterialScript : MonoBehaviour
             currentProg = currentProgress;
             color = GetComponent<SpriteRenderer>().color;
             fading = true;
+        }
+    }
+
+    void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0) && !guy.GetComponent<GuyBehavior>().WalkingToPosition)
+        {
+            guy.GetComponent<GuyBehavior>().MakeWalkToPosition(transform.position);
+            Debug.Log("Walk to Item");
         }
     }
 }

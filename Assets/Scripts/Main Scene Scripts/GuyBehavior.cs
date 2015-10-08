@@ -10,7 +10,7 @@ public class GuyBehavior : MonoBehaviour
     public bool isWalking;
     public bool facingRight;
 
-    private bool WalkingToPosition;
+    public bool WalkingToPosition;
     private Vector2 initWalkPosition;
     private Vector2 targetPosition;
     private float walkTimer;
@@ -55,7 +55,7 @@ public class GuyBehavior : MonoBehaviour
     //Handles moving the guy to target position
     private void WalkToPosition()
     {
-        if (Vector2.Distance((Vector2)transform.position, (Vector2)targetPosition) > .02f)
+        if (Mathf.Abs(transform.position.x - targetPosition.x) > .02f)
         {
             isWalking = true;
             if (transform.position.x < targetPosition.x)
