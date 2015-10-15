@@ -24,7 +24,7 @@ public class NailGameController : MonoBehaviour {
             nail4.GetComponent<NailScript>().hits > 3)
         {
             completed = true;
-            Application.LoadLevel("Title");
+            Application.LoadLevel("Workshop");
         }
 
         if (nail1.GetComponent<NailScript>().misses > 4 ||
