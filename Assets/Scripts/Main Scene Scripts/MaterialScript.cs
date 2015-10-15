@@ -4,6 +4,8 @@ using System.Collections;
 public class MaterialScript : MonoBehaviour
 {
     private bool fading;
+    private bool detectingPickup;
+    private bool held;
     private Vector4 color;
     private GameObject guy;
 
@@ -36,6 +38,20 @@ public class MaterialScript : MonoBehaviour
                 }
             }
         }
+
+        if (detectingPickup) { DetectPickup(); }
+        if (held)
+        {
+            detectingPickup = false;
+            transform.position = guy.transform.position;
+            transform.position = transform.position + new Vector3(0, 0, -2.5f);
+
+            if (Mathf.Abs(transform.position.x - GameObject.Find("Workbench").transform.position.x) < .2f)
+            {
+                transform.position = GameObject.Find("Workbench").transform.position;
+                transform.position = transform.position + new Vector3(0, 0, -2.5f);
+            }
+        }
     }
 
     public void ObjectToWorkbench(int currentProgress, int neededProgress)
@@ -54,6 +70,16 @@ public class MaterialScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !guy.GetComponent<GuyBehavior>().WalkingToPosition)
         {
             guy.GetComponent<GuyBehavior>().MakeWalkToPosition(transform.position);
+            detectingPickup = true;
+        }
+    }
+
+    void DetectPickup()
+    {
+        if (!guy.GetComponent<GuyBehavior>().WalkingToPosition)
+        {
+            held = true;
+            guy.GetComponent<GuyBehavior>().MakeWalkToPosition(GameObject.Find("Workbench").transform.position);
         }
     }
 }
