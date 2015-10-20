@@ -6,13 +6,13 @@ public class WallScript : MonoBehaviour
 
     public GameObject gameCamera;
     bool fadeZoom = false;
-    public float fadeTimer = 1.0f;
+    public float fadeTimer = 5.0f;
 
     // Use this for initialization
     void Start()
     {
         //A fix for the extremely lazy
-        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        //gameObject.GetComponent<SpriteRenderer>().enabled = true;
 
     }
 
@@ -20,25 +20,24 @@ public class WallScript : MonoBehaviour
     void Update()
     {
         // fade and zoom the camera in when the wall is clicked and the timer is not done
-        if (fadeZoom && fadeTimer > 0.0f && gameCamera.transform.position.y <= -.37f)
+        if (fadeZoom && fadeTimer > 0.0f && gameCamera.transform.position.y <= 4.63f)
         {
             // camera zoom
-            gameCamera.GetComponent<Camera>().orthographicSize -= .03f;
+            gameCamera.GetComponent<Camera>().orthographicSize -= .07f;
 
             // camera drop to adjust for zoom
             Vector3 tempPos = gameCamera.transform.position;
-            tempPos.y -= .03f;
+            tempPos.y -= .0425f;
+            tempPos.x -= .0057f;
             gameCamera.transform.position = tempPos;
 
             // fade wall
             fadeTimer -= (Time.deltaTime * .5f);
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, fadeTimer);
         }
 
-        // Move the wall out of the way once it is faded
-        if (fadeTimer <= 0.0f)
+        if (fadeTimer <= 0)
         {
-            gameObject.transform.position = new Vector3(-1000, 0, 0);
+            Application.LoadLevel("Workshop");
         }
     }
 

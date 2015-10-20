@@ -15,13 +15,13 @@ public class IntroTransition : MonoBehaviour
     void Update()
     {
         Vector3 temp = transform.position;
-        if (transform.position.y > -.39f)
+        if (transform.position.y > 4.6f)
         {
             temp.y -= .04f * timeScale;
             transform.position = temp;
-            if (transform.position.y < -.39f)
+            if (transform.position.y < 4.6f)
             {
-                transform.position = new Vector3(transform.position.x, -.39f, transform.position.z);
+                transform.position = new Vector3(transform.position.x, 4.6f, transform.position.z);
             }
         }
     }
