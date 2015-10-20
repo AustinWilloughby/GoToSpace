@@ -57,6 +57,10 @@
      <Compile Include="Assets\Assets\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
      <Compile Include="Assets\Assets\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
      <Compile Include="Assets\Scripts\CameraScale.cs" />
+     <Compile Include="Assets\Scripts\FuelCanister.cs" />
+     <Compile Include="Assets\Scripts\Fueling\FuelCanisterScript.cs" />
+     <Compile Include="Assets\Scripts\Fueling\FuelScript.cs" />
+     <Compile Include="Assets\Scripts\Fueling\FuelTankScript.cs" />
      <Compile Include="Assets\Scripts\InventoryTest.cs" />
      <Compile Include="Assets\Scripts\Main Scene Scripts\CloudScript.cs" />
      <Compile Include="Assets\Scripts\Main Scene Scripts\DoorScript.cs" />
