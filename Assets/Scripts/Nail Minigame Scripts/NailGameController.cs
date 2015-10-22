@@ -10,10 +10,14 @@ public class NailGameController : MonoBehaviour {
     public GameObject nail3;
     public GameObject nail4;
 
+    private MusicSingleton musicHandler;
+
 	// Use this for initialization
 	void Start () {
         completed = false;
         failed = false;
+        musicHandler = MusicSingleton.Instance;
+        musicHandler.SetCurrentMusic(1);
 	}
 	
 	// Update is called once per frame

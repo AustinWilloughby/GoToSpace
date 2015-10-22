@@ -79,6 +79,11 @@ public class MusicSingleton : MonoBehaviour
         lastIndex = currentSongIndex;
     }
 
+    public void SetCurrentMusic(int index)
+    {
+        currentSongIndex = index;
+    }
+
     private void CheckVolume()
     {
         if (audioPlayer.volume != volume)
