@@ -17,9 +17,6 @@ public class GuyBehavior : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        leftBound = transform.position.x - 1.0f;
-        rightBound = transform.position.x + 1.3f;
-        walkSpeed = .005f;
         isWalking = false;
         facingRight = true;
         WalkingToPosition = false;
@@ -46,8 +43,10 @@ public class GuyBehavior : MonoBehaviour
     //Initializes the guy walking to a position
     public void MakeWalkToPosition(Vector3 targetPos)
     {
+        print("trying");
         if (!WalkingToPosition)
         {
+            print("walking");
             WalkingToPosition = true;
             targetPosition = (Vector2)targetPos;
         }
@@ -64,12 +63,13 @@ public class GuyBehavior : MonoBehaviour
             if (transform.position.x < targetPosition.x)
             {
                 facingRight = true;
-                newPos.x = transform.position.x + (.5f * Time.deltaTime);
+                print(walkSpeed);
+                newPos.x = transform.position.x + (walkSpeed);
             }
             else
             {
                 facingRight = false;
-                newPos.x = transform.position.x - (.5f * Time.deltaTime);
+                newPos.x = transform.position.x - (walkSpeed);
             }
             walkTimer += Time.deltaTime;
             newPos.y = transform.position.y;

@@ -30,7 +30,7 @@ public class MaterialScript : MonoBehaviour
             {
                 if (currentProg == neededProg)
                 {
-                    Application.LoadLevel("Minigame1");
+                    Application.LoadLevel("NailMinigame");
                 }
                 else
                 {
@@ -46,8 +46,9 @@ public class MaterialScript : MonoBehaviour
             transform.position = guy.transform.position;
             transform.position = transform.position + new Vector3(0, 0, -2.5f);
 
-            if (Mathf.Abs(transform.position.x - GameObject.Find("Workbench").transform.position.x) < .2f)
+            if (Mathf.Abs(transform.position.x - GameObject.Find("Workbench").transform.position.x) < .01f)
             {
+                held = false;
                 transform.position = GameObject.Find("Workbench").transform.position;
                 transform.position = transform.position + new Vector3(0, 0, -2.5f);
             }

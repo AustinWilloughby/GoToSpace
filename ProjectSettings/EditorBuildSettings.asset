@@ -10,7 +10,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Title.unity
   - enabled: 1
-    path: Assets/Scenes/Minigame1.unity
+    path: Assets/Scenes/NailMinigame.unity
   - enabled: 1
     path: Assets/Scenes/StreetScene.unity
   - enabled: 1

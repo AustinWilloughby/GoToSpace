@@ -188,7 +188,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 219036130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.297577977, y: 3.31925011, z: 5}
+  m_LocalPosition: {x: -.0900000036, y: 1.97000003, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -322,9 +322,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e88501bb7847144a9f702b236e112b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftBound: 0
-  rightBound: 0
-  walkSpeed: 0
+  leftBound: -6.69999981
+  rightBound: 6.69999981
+  walkSpeed: .00999999978
   isWalking: 0
   facingRight: 0
   WalkingToPosition: 0
@@ -432,7 +432,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1620278269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .150000006, y: 2.38000011, z: 5}
+  m_LocalPosition: {x: .150000006, y: 2.38000011, z: 3.56999993}
   m_LocalScale: {x: .703752935, y: .666124701, z: .602156758}
   m_Children: []
   m_Father: {fileID: 0}
