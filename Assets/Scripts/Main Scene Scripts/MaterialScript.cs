@@ -30,7 +30,7 @@ public class MaterialScript : MonoBehaviour
             {
                 if (currentProg == neededProg)
                 {
-                    Application.LoadLevel("NailMinigame");
+                    GameObject.Find("ScreenBlack").GetComponent<ScreenFade>().FadeOut("Nail");
                 }
                 else
                 {

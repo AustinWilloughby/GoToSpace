@@ -34,7 +34,7 @@ public class DoorScript : MonoBehaviour
     {
         if (Mathf.Abs(transform.position.x - guy.transform.position.x) < .05f)
         {
-            Application.LoadLevel("StreetScene");
+            GameObject.Find("Main Camera").transform.GetChild(0).GetComponent<ScreenFade>().FadeOut("Street");
         }
     }
 

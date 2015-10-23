@@ -3,7 +3,7 @@ using System.Collections;
 
 public class IntroTransition : MonoBehaviour
 {
-
+    private SpriteRenderer screenBlack;
     public float timeScale = 1;
 
     // Use this for initialization
@@ -14,6 +14,16 @@ public class IntroTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (screenBlack == null)
+        {
+            screenBlack = gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        }
+        if (screenBlack.color.a > 0)
+        {
+            Color newColor = screenBlack.color;
+            newColor.a -= 1f * Time.deltaTime;
+            screenBlack.color = newColor;
+        }
         Vector3 temp = transform.position;
         if (transform.position.y > 4.6f)
         {

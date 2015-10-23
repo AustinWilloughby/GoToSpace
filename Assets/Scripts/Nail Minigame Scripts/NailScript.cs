@@ -46,12 +46,10 @@ public class NailScript : MonoBehaviour {
                     break;
             }
             hits++;
-            Debug.Log("Correct hit!");
         }
 
         else if (Input.GetMouseButtonDown(0) && GetComponent<ItemScript>().mousedOver)
         {
-            Debug.Log("Missed hit!");
             misses++;
             darkness -= .1f;
             GetComponent<SpriteRenderer>().color = new Color(darkness, darkness, darkness, 1.0f);

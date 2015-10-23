@@ -28,7 +28,7 @@ public class NailGameController : MonoBehaviour {
             nail4.GetComponent<NailScript>().hits > 3)
         {
             completed = true;
-            Application.LoadLevel("Workshop");
+            GameObject.Find("ScreenBlack").GetComponent<ScreenFade>().FadeOut("Workshop");
         }
 
         if (nail1.GetComponent<NailScript>().misses > 4 ||
