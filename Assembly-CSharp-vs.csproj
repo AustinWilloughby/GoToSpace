@@ -77,9 +77,11 @@
      <Compile Include="Assets\Scripts\OrderedEventTrigger.cs" />
      <Compile Include="Assets\Scripts\PlayerPrefsTest.cs" />
      <Compile Include="Assets\Scripts\Rotate.cs" />
+     <Compile Include="Assets\Scripts\ScreenFade.cs" />
      <Compile Include="Assets\Scripts\Splash Scripts\IntroTransition.cs" />
      <Compile Include="Assets\Scripts\Splash Scripts\Splash.cs" />
      <Compile Include="Assets\Scripts\Splash Scripts\Tip.cs" />
+     <Compile Include="Assets\Scripts\StatusTracker.cs" />
      <None Include="Assets\TouchScript\Shaders\DebugDepthTest.shader" />
      <None Include="Assets\TouchScript\Shaders\DebugMultiplyDepthTest.shader" />
      <None Include="Assets\TouchScript\Shaders\DebugNoDepthTest.shader" />

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using System.Collections;
 
 public class StatusTracker : MonoBehaviour
@@ -31,16 +31,35 @@ public class StatusTracker : MonoBehaviour
     }
     #endregion
 
+    public CurrentlyBuilding currentStage;
 
     // Use this for initialization
     void Start()
     {
-
+        currentStage = CurrentlyBuilding.Platform;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+    }
 
+    public void AdvanceStage()
+    {
+        currentStage++;
     }
 }
+
+public enum CurrentlyBuilding
+{
+    Platform,
+    Skeleton,
+    Interior,
+    CrudeExterior,
+    SandingExterior,
+    AddingFins,
+    AddingWindow,
+    Painting,
+    ToSpace
+};
