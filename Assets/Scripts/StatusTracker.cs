@@ -33,6 +33,11 @@ public class StatusTracker : MonoBehaviour
 
     public CurrentlyBuilding currentStage;
 
+    //Sky Color Variables
+    public Sprite[] skyColors;
+    public int currentSkyColorIndex;
+    private SpriteRenderer sky;
+
     // Use this for initialization
     void Start()
     {
@@ -48,6 +53,27 @@ public class StatusTracker : MonoBehaviour
     public void AdvanceStage()
     {
         currentStage++;
+    }
+
+    void OnLevelWasLoaded(int level) //Called whenever a new scene loads
+    {
+        TargetSkyBox();
+    }
+
+    private void TargetSkyBox() //Attempts to lock to scenes skybox
+    {
+        try //Try to find the skybox and set its color
+        {
+            sky = GameObject.Find("SkyColor").GetComponent<SpriteRenderer>();
+            sky.sprite = skyColors[currentSkyColorIndex % skyColors.Length];
+            
+            //Possible final version, where each possible state has a sky color
+            //sky.sprite = skyColors[(int)currentStage % skyColors.Length];
+        }
+        catch //If this fails, set the sky to null
+        {
+            sky = null;
+        }
     }
 }
 
