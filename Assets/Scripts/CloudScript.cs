@@ -17,5 +17,10 @@ public class CloudScript : MonoBehaviour
         Vector3 newPos = transform.position;
         newPos.x += speed * Time.deltaTime;
         transform.position = newPos;
+
+        if (newPos.x > 25.0f)
+        {
+            GameObject.Destroy(gameObject);
+        }
     }
 }
