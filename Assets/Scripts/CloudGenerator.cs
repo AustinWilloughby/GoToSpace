@@ -8,6 +8,7 @@ public class CloudGenerator : MonoBehaviour
 
     public int numStartingClouds;
     public float sizeMultiplier = 1;
+    public float heightMultiplier = 1;
 
     // Use this for initialization
     void Start()
@@ -16,7 +17,7 @@ public class CloudGenerator : MonoBehaviour
         {
             Vector3 randPos = transform.position;
             randPos.x += Random.Range(5f * sizeMultiplier, 25f * sizeMultiplier);
-            randPos.y += Random.Range(0f, 25.0f * sizeMultiplier);
+            randPos.y += Random.Range(0f, 25.0f * sizeMultiplier * heightMultiplier);
             randPos.z += Random.Range(0f, 5.0f * sizeMultiplier);
 
             GameObject cloud = cloudPrefabs[Random.Range(0, cloudPrefabs.Length - 1)];
@@ -45,7 +46,7 @@ public class CloudGenerator : MonoBehaviour
         if (Random.Range(0, cloudFrequency) == 0)
         {
             Vector3 randPos = transform.position;
-            randPos.y += Random.Range(0f, 15.0f * sizeMultiplier);
+            randPos.y += Random.Range(0f, 15.0f * sizeMultiplier * heightMultiplier);
             randPos.z += Random.Range(0f, 5.0f * sizeMultiplier);
 
             GameObject cloud = cloudPrefabs[Random.Range(0, cloudPrefabs.Length - 1)];
