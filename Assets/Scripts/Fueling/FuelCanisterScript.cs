@@ -10,7 +10,7 @@ public class FuelCanister : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Rotate(0, 0, Input.acceleration.z);
+        transform.Rotate(0, 0, Input.acceleration.x);
 
         if (Input.GetKey(KeyCode.A))
         {
