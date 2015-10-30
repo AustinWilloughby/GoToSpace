@@ -36,14 +36,19 @@ public class MusicSingleton : MonoBehaviour
     public float volume;
     public int currentSongIndex;
     public List<AudioClip> music;
+    public float crossFadeTime = 1;
 
-    private AudioSource audioPlayer;
+    public AudioSource audioPlayer;
+    public AudioSource secondAudioPlayer;
     private int lastIndex;
+    private bool fading = false;
+    private int currentPlayer;
+    private float crossFadeTimer;
 
     // Use this for initialization
     void Start()
     {
-        audioPlayer = GetComponent<AudioSource>();
+        crossFadeTimer = crossFadeTime;
         if (audioPlayer.volume != volume)
         {
             if (volume > 1)
@@ -59,6 +64,8 @@ public class MusicSingleton : MonoBehaviour
         audioPlayer.clip = music[currentSongIndex % music.Count];
         lastIndex = currentSongIndex;
         audioPlayer.loop = true;
+        currentPlayer = 1;
+        fading = false;
         audioPlayer.Play();
     }
     // Update is called once per frame
@@ -68,15 +75,33 @@ public class MusicSingleton : MonoBehaviour
         {
             ChangeCurrentMusic();
         }
-        CheckVolume();
+        if (fading)
+        {
+            Crossfade();
+        }
+        else
+        {
+            CheckVolume();
+        }
     }
 
     private void ChangeCurrentMusic()
     {
-        audioPlayer.Stop();
-        audioPlayer.clip = music[currentSongIndex % music.Count];
-        audioPlayer.Play();
+        crossFadeTimer = crossFadeTime;
+        if(currentPlayer == 1)
+        { 
+            secondAudioPlayer.clip = music[currentSongIndex % music.Count];
+            secondAudioPlayer.Play();
+            currentPlayer = 2;
+        }
+        else
+        {
+            audioPlayer.clip = music[currentSongIndex % music.Count];
+            currentPlayer = 1;
+            audioPlayer.Play();
+        }
         lastIndex = currentSongIndex;
+        fading = true;
     }
 
     public void SetCurrentMusic(int index)
@@ -116,21 +141,67 @@ public class MusicSingleton : MonoBehaviour
         return false;
     }
 
+    private void Crossfade()
+    {
+        crossFadeTimer -= Time.deltaTime;
+        if(currentPlayer == 2)
+        {
+            audioPlayer.volume = Mathf.Lerp(0, volume, crossFadeTimer);
+            secondAudioPlayer.volume = Mathf.Lerp(volume, 0, crossFadeTimer);
+        }
+        else
+        {
+            audioPlayer.volume = Mathf.Lerp(volume, 0, crossFadeTimer);
+            secondAudioPlayer.volume = Mathf.Lerp(0, volume, crossFadeTimer);
+        }
+        if (crossFadeTimer <= 0)
+        {
+            fading = false;
+            crossFadeTimer = crossFadeTime;
+        }
+    }
+
     private void CheckVolume()
     {
-        if (audioPlayer.volume != volume)
+        if (currentPlayer == 1)
         {
-            if (volume > 1)
+            if (audioPlayer.volume != volume)
             {
-                volume = 1;
+                if (volume > 1)
+                {
+                    volume = 1;
+                }
+                if (volume < 0)
+                {
+                    volume = 0;
+                }
+                audioPlayer.volume = volume;
             }
-            if (volume < 0)
+            if (secondAudioPlayer.volume != 0)
             {
-                volume = 0;
+                secondAudioPlayer.volume = 0;
+                secondAudioPlayer.Stop();
             }
-            audioPlayer.Pause();
-            audioPlayer.volume = volume;
-            audioPlayer.UnPause();
+        }
+        else
+        {
+            if (secondAudioPlayer.volume != volume)
+            {
+                if (volume > 1)
+                {
+                    volume = 1;
+                }
+                if (volume < 0)
+                {
+                    volume = 0;
+                }
+                secondAudioPlayer.volume = volume;
+            }
+            if(audioPlayer.volume != 0)
+            {
+                audioPlayer.volume = 0;
+                audioPlayer.Stop();
+            }
         }
     }
 }

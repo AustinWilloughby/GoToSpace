@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeRate: .800000012
+  newSong: GTS - Workshop
 --- !u!212 &6169252
 SpriteRenderer:
   m_ObjectHideFlags: 0
