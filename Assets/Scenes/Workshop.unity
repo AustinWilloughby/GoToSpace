@@ -357,9 +357,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 2.64380503, y: .28084752}
+  m_Offset: {x: 1.11066246, y: .915825844}
   serializedVersion: 2
-  m_Size: {x: 8.17620659, y: 3.70382547}
+  m_Size: {x: 4.71763897, y: 7.93314838}
 --- !u!114 &433600212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,15 +371,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2796b00463a6a4b8c30cc769e1f176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: Street
 --- !u!4 &433600213
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 433600210}
-  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
-  m_LocalPosition: {x: 8.67000008, y: -5.46000004, z: -2.31999922}
-  m_LocalScale: {x: .601235867, y: .653844118, z: .601236105}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.80000019, y: -4.42000008, z: -2.31999922}
+  m_LocalScale: {x: .653844118, y: .653844118, z: .601236105}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1

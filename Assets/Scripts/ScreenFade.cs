@@ -4,6 +4,8 @@ using System.Collections;
 public class ScreenFade : MonoBehaviour
 {
     public float fadeRate = 1;
+    public string newSong = null;
+
     private SpriteRenderer renderer;
     private Color tempColor;
     private bool fadeIn;
@@ -12,6 +14,13 @@ public class ScreenFade : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        if(newSong != null && MusicSingleton.Instance != null)
+        {
+            if (MusicSingleton.Instance.DoesSongExist(newSong) && !MusicSingleton.Instance.IsCurrentSong(newSong))
+            {
+                MusicSingleton.Instance.SetCurrentMusic(newSong);
+            }
+        }
         FadeIn();
     }
 

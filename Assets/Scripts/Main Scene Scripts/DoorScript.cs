@@ -3,6 +3,8 @@ using System.Collections;
 
 public class DoorScript : MonoBehaviour
 {
+    public string sceneName;
+
     private bool doorClicked = false;
     private GameObject guy;
 
@@ -34,7 +36,8 @@ public class DoorScript : MonoBehaviour
     {
         if (Mathf.Abs(transform.position.x - guy.transform.position.x) < .05f)
         {
-            GameObject.Find("Main Camera").transform.GetChild(0).GetComponent<ScreenFade>().FadeOut("Street");
+            guy.GetComponent<GuyBehavior>().enabled = false;
+            GameObject.Find("Main Camera").transform.GetChild(0).GetComponent<ScreenFade>().FadeOut(sceneName);
         }
     }
 

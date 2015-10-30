@@ -83,6 +83,38 @@ public class MusicSingleton : MonoBehaviour
     {
         currentSongIndex = index;
     }
+    
+    public void SetCurrentMusic(string songName)
+    {
+        for(int i = 0; i < music.Count; i++)
+        {
+            if(music[i].name == songName)
+            {
+                currentSongIndex = i;
+            }
+        }
+    }
+
+    public bool IsCurrentSong(string songName)
+    {
+        if(music[currentSongIndex].name == songName)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public bool DoesSongExist(string songName)
+    {
+        for (int i = 0; i < music.Count; i++)
+        {
+            if (music[i].name == songName)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     private void CheckVolume()
     {

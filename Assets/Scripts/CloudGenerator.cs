@@ -5,6 +5,7 @@ public class CloudGenerator : MonoBehaviour
 {
     public GameObject[] cloudPrefabs;
     public int cloudFrequency;
+    public bool oneTimeGenerate = false;
 
     public int numStartingClouds;
     public float sizeMultiplier = 1;
@@ -37,6 +38,10 @@ public class CloudGenerator : MonoBehaviour
             }
 
             GameObject.Instantiate(cloud, randPos, Quaternion.identity);
+        }
+        if(oneTimeGenerate)
+        {
+            GameObject.Destroy(gameObject);
         }
     }
 

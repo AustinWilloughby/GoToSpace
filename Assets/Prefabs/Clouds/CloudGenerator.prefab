@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.7999992, y: 6.69999981, z: -1.28999996}
+  m_LocalPosition: {x: -8.59000015, y: -1.90999997, z: .800000012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,9 +46,11 @@ MonoBehaviour:
   - {fileID: 178656, guid: 1b6c73bb5e46a5946bb337f33efae264, type: 2}
   - {fileID: 169744, guid: c66a2002661d3b64e91e0d71b2327db1, type: 2}
   - {fileID: 192730, guid: 84100f42d15d2ec48be55baec0896678, type: 2}
-  cloudFrequency: 200
+  cloudFrequency: 700
+  oneTimeGenerate: 0
   numStartingClouds: 5
-  sizeMultiplier: 1
+  sizeMultiplier: .200000003
+  heightMultiplier: .200000003
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
