@@ -36,19 +36,19 @@ public class MusicSingleton : MonoBehaviour
     public float volume;
     public int currentSongIndex;
     public List<AudioClip> music;
-    public float crossFadeTime = 1;
+    public float fadeTime = 1;
 
-    public AudioSource audioPlayer;
-    public AudioSource secondAudioPlayer;
+    private AudioSource audioPlayer;
     private int lastIndex;
-    private bool fading = false;
-    private int currentPlayer;
-    private float crossFadeTimer;
+    private float fadeTimer = 1;
+    private bool fadingOut = false;
+    private bool fadingIn = false;
 
     // Use this for initialization
     void Start()
     {
-        crossFadeTimer = crossFadeTime;
+        audioPlayer = gameObject.GetComponent<AudioSource>();
+        fadeTimer = fadeTime;
         if (audioPlayer.volume != volume)
         {
             if (volume > 1)
@@ -64,20 +64,22 @@ public class MusicSingleton : MonoBehaviour
         audioPlayer.clip = music[currentSongIndex % music.Count];
         lastIndex = currentSongIndex;
         audioPlayer.loop = true;
-        currentPlayer = 1;
-        fading = false;
         audioPlayer.Play();
     }
     // Update is called once per frame
     void Update()
     {
-        if (currentSongIndex != lastIndex)
+        if (fadingOut)
+        {
+            FadeOut();
+        }
+        else if (fadingIn)
+        {
+            FadeIn();
+        }
+        else if (currentSongIndex != lastIndex)
         {
             ChangeCurrentMusic();
-        }
-        if (fading)
-        {
-            Crossfade();
         }
         else
         {
@@ -87,33 +89,23 @@ public class MusicSingleton : MonoBehaviour
 
     private void ChangeCurrentMusic()
     {
-        crossFadeTimer = crossFadeTime;
-        if(currentPlayer == 1)
-        { 
-            secondAudioPlayer.clip = music[currentSongIndex % music.Count];
-            secondAudioPlayer.Play();
-            currentPlayer = 2;
-        }
-        else
-        {
-            audioPlayer.clip = music[currentSongIndex % music.Count];
-            currentPlayer = 1;
-            audioPlayer.Play();
-        }
+        audioPlayer.Stop();
+        audioPlayer.clip = music[currentSongIndex % music.Count];
+        audioPlayer.Play();
+        FadeIn();
         lastIndex = currentSongIndex;
-        fading = true;
     }
 
     public void SetCurrentMusic(int index)
     {
         currentSongIndex = index;
     }
-    
+
     public void SetCurrentMusic(string songName)
     {
-        for(int i = 0; i < music.Count; i++)
+        for (int i = 0; i < music.Count; i++)
         {
-            if(music[i].name == songName)
+            if (music[i].name == songName)
             {
                 currentSongIndex = i;
             }
@@ -122,7 +114,7 @@ public class MusicSingleton : MonoBehaviour
 
     public bool IsCurrentSong(string songName)
     {
-        if(music[currentSongIndex].name == songName)
+        if (music[currentSongIndex].name == songName)
         {
             return true;
         }
@@ -141,67 +133,66 @@ public class MusicSingleton : MonoBehaviour
         return false;
     }
 
-    private void Crossfade()
+    public void FadeOut()
     {
-        crossFadeTimer -= Time.deltaTime;
-        if(currentPlayer == 2)
+        if (!fadingOut)
         {
-            audioPlayer.volume = Mathf.Lerp(0, volume, crossFadeTimer);
-            secondAudioPlayer.volume = Mathf.Lerp(volume, 0, crossFadeTimer);
+            fadingOut = true;
+            fadeTimer = fadeTime;
         }
-        else
+        fadeTimer -= Time.deltaTime;
+        audioPlayer.volume = Mathf.Lerp(0, volume, fadeTimer);
+        if (fadeTimer <= 0)
         {
-            audioPlayer.volume = Mathf.Lerp(volume, 0, crossFadeTimer);
-            secondAudioPlayer.volume = Mathf.Lerp(0, volume, crossFadeTimer);
+            fadingOut = false;
+            fadeTime = 1.0f;
+            fadeTimer = fadeTime;
         }
-        if (crossFadeTimer <= 0)
+    }
+
+    public void FadeOut(float timer)
+    {
+        if (!fadingOut)
         {
-            fading = false;
-            crossFadeTimer = crossFadeTime;
+            fadingOut = true;
+            fadeTime = timer;
+            fadeTimer = fadeTime;
+        }
+        fadeTimer -= Time.deltaTime;
+        audioPlayer.volume = Mathf.Lerp(0, volume, fadeTimer);
+    }
+
+    private void FadeIn()
+    {
+        if (!fadingIn)
+        {
+            fadingIn = true;
+            fadeTimer = fadeTime;
+        }
+        fadeTimer -= Time.deltaTime;
+        audioPlayer.volume = Mathf.Lerp(volume, 0, fadeTimer);
+        if (fadeTimer <= 0)
+        {
+            fadingIn = false;
+            fadeTimer = fadeTime;
         }
     }
 
     private void CheckVolume()
     {
-        if (currentPlayer == 1)
+        if (audioPlayer.volume != volume)
         {
-            if (audioPlayer.volume != volume)
+            if (volume > 1)
             {
-                if (volume > 1)
-                {
-                    volume = 1;
-                }
-                if (volume < 0)
-                {
-                    volume = 0;
-                }
-                audioPlayer.volume = volume;
+                volume = 1;
             }
-            if (secondAudioPlayer.volume != 0)
+            if (volume < 0)
             {
-                secondAudioPlayer.volume = 0;
-                secondAudioPlayer.Stop();
+                volume = 0;
             }
-        }
-        else
-        {
-            if (secondAudioPlayer.volume != volume)
-            {
-                if (volume > 1)
-                {
-                    volume = 1;
-                }
-                if (volume < 0)
-                {
-                    volume = 0;
-                }
-                secondAudioPlayer.volume = volume;
-            }
-            if(audioPlayer.volume != 0)
-            {
-                audioPlayer.volume = 0;
-                audioPlayer.Stop();
-            }
+            audioPlayer.volume = volume;
         }
     }
+
 }
+

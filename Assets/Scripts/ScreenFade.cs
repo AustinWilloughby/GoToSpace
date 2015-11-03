@@ -47,6 +47,10 @@ public class ScreenFade : MonoBehaviour
             tempColor = renderer.color;
             tempColor.a += fadeRate * Time.deltaTime;
             renderer.color = tempColor;
+            if (MusicSingleton.Instance != null)
+            {
+                MusicSingleton.Instance.FadeOut(2.0f);
+            }
             if (tempColor.a >= 1)
             {
                 fadeOut = false;
