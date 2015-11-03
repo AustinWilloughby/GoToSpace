@@ -6,7 +6,8 @@ TagManager:
   tags:
   - fuel
   - WeldTarget
-  - New Tag
+  - Wall
+  - Scratch
   layers:
   - Default
   - TransparentFX
