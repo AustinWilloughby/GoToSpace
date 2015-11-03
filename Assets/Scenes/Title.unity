@@ -127,14 +127,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cloudPrefabs:
-  - {fileID: 149222, guid: 88fa1dde1c60b724ca0e4939b9bccdae, type: 2}
-  - {fileID: 180100, guid: 910ee9b9bd291f14db306ff2f56530bb, type: 2}
-  - {fileID: 176932, guid: 2ee89669d03deb8499243afdd59e128f, type: 2}
-  - {fileID: 178656, guid: 1b6c73bb5e46a5946bb337f33efae264, type: 2}
-  - {fileID: 169744, guid: c66a2002661d3b64e91e0d71b2327db1, type: 2}
+  - {fileID: 111844, guid: 88fa1dde1c60b724ca0e4939b9bccdae, type: 2}
+  - {fileID: 123290, guid: 910ee9b9bd291f14db306ff2f56530bb, type: 2}
+  - {fileID: 165900, guid: 2ee89669d03deb8499243afdd59e128f, type: 2}
+  - {fileID: 182520, guid: 1b6c73bb5e46a5946bb337f33efae264, type: 2}
+  - {fileID: 182180, guid: c66a2002661d3b64e91e0d71b2327db1, type: 2}
   - {fileID: 192730, guid: 84100f42d15d2ec48be55baec0896678, type: 2}
   cloudFrequency: 200
+  oneTimeGenerate: 0
   numStartingClouds: 5
+  sizeMultiplier: 1
+  heightMultiplier: 1
 --- !u!1 &206216643
 GameObject:
   m_ObjectHideFlags: 0
