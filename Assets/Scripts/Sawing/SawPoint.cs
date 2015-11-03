@@ -5,6 +5,8 @@ public class SawPoint : MonoBehaviour {
 
     bool outOfBounds;
     bool onScratch;
+	bool goingToPoint2;
+	public int progress;
     public GameObject scratch;
     public float outOfBoundsTime;
 
@@ -12,6 +14,8 @@ public class SawPoint : MonoBehaviour {
 	void Start () {
         onScratch = false;
         outOfBounds = false;
+		goingToPoint2 = false;
+		progress = 0;
         outOfBoundsTime = 0;
 	}
 	
@@ -31,6 +35,18 @@ public class SawPoint : MonoBehaviour {
         {
             outOfBounds = true;
         }
+
+		if (other.tag == "Point1" && !goingToPoint2)
+		{
+			progress += 1;
+			goingToPoint2 = true;
+		}
+
+		if (other.tag == "Point2" && goingToPoint2)
+		{
+			progress += 1;
+			goingToPoint2 = false;
+		}
 
         if (other.tag == "Scratch")
         {
@@ -62,5 +78,10 @@ public class SawPoint : MonoBehaviour {
         {
             onScratch = false;
         }
+
+		if (other.tag == "Bound")
+		{
+			progress = 0;
+		}
     }
 }

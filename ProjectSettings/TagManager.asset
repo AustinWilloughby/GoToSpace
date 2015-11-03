@@ -8,6 +8,9 @@ TagManager:
   - WeldTarget
   - Wall
   - Scratch
+  - Point1
+  - Point2
+  - Bound
   layers:
   - Default
   - TransparentFX
