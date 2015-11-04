@@ -47,10 +47,6 @@ public class WallScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             fadeZoom = true;
-            if (MusicSingleton.Instance != null)
-            {
-                MusicSingleton.Instance.FadeOut(2.4f);
-            }
         }
     }
 }

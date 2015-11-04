@@ -36,18 +36,18 @@ public class MusicSingleton : MonoBehaviour
     public float volume;
     public int currentSongIndex;
     public List<AudioClip> music;
-    public float fadeTime = 1;
+    public float fadeTime = .5f;
+    public AudioSource audioPlayer;
 
-    private AudioSource audioPlayer;
     private int lastIndex;
     private float fadeTimer = 1;
     private bool fadingOut = false;
     private bool fadingIn = false;
+    private string upcomingSong;
 
     // Use this for initialization
     void Start()
     {
-        audioPlayer = gameObject.GetComponent<AudioSource>();
         fadeTimer = fadeTime;
         if (audioPlayer.volume != volume)
         {
@@ -71,19 +71,37 @@ public class MusicSingleton : MonoBehaviour
     {
         if (fadingOut)
         {
-            FadeOut();
+            fadeTimer -= Time.deltaTime;
+            audioPlayer.volume = Mathf.Lerp(0, volume, fadeTimer);
+            if(fadeTimer <= 0)
+            {
+                fadingOut = false;
+                if(upcomingSong != null)
+                {
+                    SetCurrentMusic(upcomingSong);
+                    upcomingSong = null;
+                }
+                FadeIn();
+                
+            }
         }
         else if (fadingIn)
         {
-            FadeIn();
-        }
-        else if (currentSongIndex != lastIndex)
-        {
-            ChangeCurrentMusic();
+            fadeTimer -= Time.deltaTime;
+            audioPlayer.volume = Mathf.Lerp(volume, 0, fadeTimer);
+            if (fadeTimer <= 0)
+            {
+                fadingIn = false;
+            }
         }
         else
         {
             CheckVolume();
+        }
+
+        if (currentSongIndex != lastIndex)
+        {
+            ChangeCurrentMusic();
         }
     }
 
@@ -92,7 +110,6 @@ public class MusicSingleton : MonoBehaviour
         audioPlayer.Stop();
         audioPlayer.clip = music[currentSongIndex % music.Count];
         audioPlayer.Play();
-        FadeIn();
         lastIndex = currentSongIndex;
     }
 
@@ -135,47 +152,22 @@ public class MusicSingleton : MonoBehaviour
 
     public void FadeOut()
     {
-        if (!fadingOut)
-        {
-            fadingOut = true;
-            fadeTimer = fadeTime;
-        }
-        fadeTimer -= Time.deltaTime;
-        audioPlayer.volume = Mathf.Lerp(0, volume, fadeTimer);
-        if (fadeTimer <= 0)
-        {
-            fadingOut = false;
-            fadeTime = 1.0f;
-            fadeTimer = fadeTime;
-        }
+        fadingIn = false;
+        fadingOut = true;
+        fadeTimer = fadeTime;
     }
 
-    public void FadeOut(float timer)
+    public void FadeOut(string newSong)
     {
-        if (!fadingOut)
-        {
-            fadingOut = true;
-            fadeTime = timer;
-            fadeTimer = fadeTime;
-        }
-        fadeTimer -= Time.deltaTime;
-        audioPlayer.volume = Mathf.Lerp(0, volume, fadeTimer);
+        FadeOut();
+        upcomingSong = newSong;
     }
 
     private void FadeIn()
     {
-        if (!fadingIn)
-        {
-            fadingIn = true;
-            fadeTimer = fadeTime;
-        }
-        fadeTimer -= Time.deltaTime;
-        audioPlayer.volume = Mathf.Lerp(volume, 0, fadeTimer);
-        if (fadeTimer <= 0)
-        {
-            fadingIn = false;
-            fadeTimer = fadeTime;
-        }
+        fadingOut = false;
+        fadingIn = true;
+        fadeTimer = fadeTime;
     }
 
     private void CheckVolume()

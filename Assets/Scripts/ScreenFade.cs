@@ -14,14 +14,14 @@ public class ScreenFade : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        FadeIn();
         if(newSong != null && MusicSingleton.Instance != null)
         {
             if (MusicSingleton.Instance.DoesSongExist(newSong) && !MusicSingleton.Instance.IsCurrentSong(newSong))
             {
-                MusicSingleton.Instance.SetCurrentMusic(newSong);
+                MusicSingleton.Instance.FadeOut(newSong);
             }
         }
-        FadeIn();
     }
 
     // Update is called once per frame
@@ -47,10 +47,6 @@ public class ScreenFade : MonoBehaviour
             tempColor = renderer.color;
             tempColor.a += fadeRate * Time.deltaTime;
             renderer.color = tempColor;
-            if (MusicSingleton.Instance != null)
-            {
-                MusicSingleton.Instance.FadeOut(2.0f);
-            }
             if (tempColor.a >= 1)
             {
                 fadeOut = false;
