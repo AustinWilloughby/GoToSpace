@@ -36,23 +36,44 @@ public class StatusTracker : MonoBehaviour
     //Sky Color Variables
     public Sprite[] skyColors;
     public int currentSkyColorIndex;
+    public string[] miniGames;
     private SpriteRenderer sky;
+    private int itemsLeft;
 
     // Use this for initialization
     void Start()
     {
         currentStage = CurrentlyBuilding.Platform;
+        itemsLeft = 3;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        CheckSky();   
     }
 
     public void AdvanceStage()
     {
-        currentStage++;
+        currentStage = (CurrentlyBuilding)((int)currentStage + 1);
+        currentSkyColorIndex++;
+        itemsLeft = 3;
+    }
+
+    public void CollectItem()
+    {
+        itemsLeft--;
+        if (itemsLeft <= 0)
+        {
+            try //Try to find the screenfader and load minigame with transition
+            {
+                GameObject.Find("ScreenBlack").GetComponent<ScreenFade>().FadeOut(miniGames[(int)currentStage]);
+            }
+            catch //If this fails, just load the minigame
+            {
+                Application.LoadLevel(miniGames[(int)currentStage]);
+            }
+        }
     }
 
     void OnLevelWasLoaded(int level) //Called whenever a new scene loads
@@ -66,13 +87,31 @@ public class StatusTracker : MonoBehaviour
         {
             sky = GameObject.Find("SkyColor").GetComponent<SpriteRenderer>();
             sky.sprite = skyColors[currentSkyColorIndex % skyColors.Length];
-            
             //Possible final version, where each possible state has a sky color
             //sky.sprite = skyColors[(int)currentStage % skyColors.Length];
         }
         catch //If this fails, set the sky to null
         {
             sky = null;
+        }
+    }
+
+    private void CheckSky()
+    {
+        if (sky != null)
+        {
+            if (sky.sprite != skyColors[currentSkyColorIndex % skyColors.Length])
+            {
+                sky.sprite = skyColors[currentSkyColorIndex % skyColors.Length];
+            }
+        }
+        else
+        {
+            try
+            {
+                sky = GameObject.Find("SkyColor").GetComponent<SpriteRenderer>();
+            }
+            catch { }
         }
     }
 }

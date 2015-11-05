@@ -21,6 +21,10 @@ public class WorkbenchScript : MonoBehaviour
     {
         if (col.gameObject.tag == "CraftingMat")
         {
+            if(StatusTracker.Instance != null)
+            {
+                StatusTracker.Instance.CollectItem();
+            }
             progress++;
             col.gameObject.GetComponent<MaterialScript>().ObjectToWorkbench(progress, numberMaterials);
             col.tag = "Untagged"; 

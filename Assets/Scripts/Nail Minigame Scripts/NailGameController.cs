@@ -17,13 +17,26 @@ public class NailGameController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
+        if (!completed)
+        {
+            CheckStatus();
+        }
+	}
+
+    private void CheckStatus()
+    {
         if (nail1.GetComponent<NailScript>().hits > 3 &&
             nail2.GetComponent<NailScript>().hits > 3 &&
             nail3.GetComponent<NailScript>().hits > 3 &&
             nail4.GetComponent<NailScript>().hits > 3)
         {
             completed = true;
+            if (StatusTracker.Instance != null)
+            {
+                StatusTracker.Instance.AdvanceStage();
+            }
             GameObject.Find("ScreenBlack").GetComponent<ScreenFade>().FadeOut("Workshop");
         }
 
@@ -34,5 +47,5 @@ public class NailGameController : MonoBehaviour {
         {
             failed = true;
         }
-	}
+    }
 }

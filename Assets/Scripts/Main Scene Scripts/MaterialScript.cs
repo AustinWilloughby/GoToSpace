@@ -9,8 +9,8 @@ public class MaterialScript : MonoBehaviour
     private Vector4 color;
     private GameObject guy;
 
-    private int neededProg;
-    private int currentProg;
+    //private int neededProg;
+    //private int currentProg;
     // Use this for initialization
     void Start()
     {
@@ -28,14 +28,7 @@ public class MaterialScript : MonoBehaviour
             GetComponent<SpriteRenderer>().color = color;
             if (color.w <= 0)
             {
-                if (currentProg == neededProg)
-                {
-                    GameObject.Find("ScreenBlack").GetComponent<ScreenFade>().FadeOut("Nail");
-                }
-                else
-                {
-                    GameObject.Destroy(this);
-                }
+                GameObject.Destroy(this);
             }
         }
 
