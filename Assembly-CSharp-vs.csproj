@@ -77,7 +77,6 @@
      <Compile Include="Assets\Scripts\ObjectBounding.cs" />
      <Compile Include="Assets\Scripts\OrderedEventTrigger.cs" />
      <Compile Include="Assets\Scripts\PlayerPrefsTest.cs" />
-     <Compile Include="Assets\Scripts\Rotate.cs" />
      <Compile Include="Assets\Scripts\Sawing\Saw.cs" />
      <Compile Include="Assets\Scripts\Sawing\SawPoint.cs" />
      <Compile Include="Assets\Scripts\ScreenFade.cs" />

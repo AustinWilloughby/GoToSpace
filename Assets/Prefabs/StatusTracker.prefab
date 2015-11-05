@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &148444
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 404366}
+  - 114: {fileID: 11431986}
+  m_Layer: 0
+  m_Name: StatusTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &404366
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148444}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.97633934, y: -3.68392539, z: -.000577173196}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11431986
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a98f88fba9ce64f8235f703590e9d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentStage: 0
+  skyColors:
+  - {fileID: 21300000, guid: 15317bf8c53ce074ea5f4a1022b0fe50, type: 3}
+  - {fileID: 21300000, guid: a316ea75d3d52c04992233efd4e231ab, type: 3}
+  - {fileID: 21300000, guid: 38ff936918e928f4c878faa31b21fa38, type: 3}
+  - {fileID: 21300000, guid: 11c7dc96556398a4997b0b3bda89851a, type: 3}
+  - {fileID: 21300000, guid: f3b14d10ed8fd704c9d178c4ffeed08d, type: 3}
+  - {fileID: 21300000, guid: 817ad3def9f44e848952952f7739e18b, type: 3}
+  - {fileID: 21300000, guid: c3da994fc42e1cc43a09abfbb119fa57, type: 3}
+  - {fileID: 21300000, guid: 845174f706a025f428c1872cecd814de, type: 3}
+  currentSkyColorIndex: 0
+  miniGames:
+  - Nail
+  - Weld
+  - JetFuel
+  - Sawing
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 148444}
+  m_IsPrefabParent: 1

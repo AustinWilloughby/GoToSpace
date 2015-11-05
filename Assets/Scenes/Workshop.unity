@@ -980,7 +980,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c0dc5781cae4a6348b42ea6b818a3f9c, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: c0dc5781cae4a6348b42ea6b818a3f9c, type: 2}
       propertyPath: m_Enabled
@@ -1043,6 +1043,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
+--- !u!1001 &1651093072
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: miniGames.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 404366, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.97633934
+      objectReference: {fileID: 0}
+    - target: {fileID: 404366, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.68392539
+      objectReference: {fileID: 0}
+    - target: {fileID: 404366, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -.000577173196
+      objectReference: {fileID: 0}
+    - target: {fileID: 404366, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 404366, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 404366, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 404366, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 404366, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: miniGames.Array.data[0]
+      value: Nail
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: miniGames.Array.data[1]
+      value: Weld
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: miniGames.Array.data[2]
+      value: JetFuel
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: miniGames.Array.data[3]
+      value: Sawing
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1966973018
 GameObject:
   m_ObjectHideFlags: 0

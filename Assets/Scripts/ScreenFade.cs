@@ -11,6 +11,8 @@ public class ScreenFade : MonoBehaviour
     private bool fadeIn;
     private bool fadeOut;
     private string newSceneString;
+
+
     // Use this for initialization
     void Start()
     {
