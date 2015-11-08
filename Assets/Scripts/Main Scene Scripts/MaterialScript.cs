@@ -52,8 +52,6 @@ public class MaterialScript : MonoBehaviour
     {
         if (!fading)
         {
-            neededProg = neededProgress;
-            currentProg = currentProgress;
             color = GetComponent<SpriteRenderer>().color;
             fading = true;
         }

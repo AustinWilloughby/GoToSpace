@@ -127,11 +127,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cloudPrefabs:
-  - {fileID: 111844, guid: 88fa1dde1c60b724ca0e4939b9bccdae, type: 2}
-  - {fileID: 123290, guid: 910ee9b9bd291f14db306ff2f56530bb, type: 2}
-  - {fileID: 165900, guid: 2ee89669d03deb8499243afdd59e128f, type: 2}
-  - {fileID: 182520, guid: 1b6c73bb5e46a5946bb337f33efae264, type: 2}
-  - {fileID: 182180, guid: c66a2002661d3b64e91e0d71b2327db1, type: 2}
+  - {fileID: 122482, guid: c1404944852887343bb4905ce9dc6f8d, type: 2}
+  - {fileID: 180514, guid: f8bbf8a93c0ea4048829718017870923, type: 2}
+  - {fileID: 101548, guid: 148f2d250e279c04aa35949a4b3b6165, type: 2}
+  - {fileID: 116822, guid: 343311f73a815484c97cf15c489de1fe, type: 2}
+  - {fileID: 164984, guid: afee03f41ac05bb4c869c395c5fd3d3b, type: 2}
   - {fileID: 192730, guid: 84100f42d15d2ec48be55baec0896678, type: 2}
   cloudFrequency: 200
   oneTimeGenerate: 0
