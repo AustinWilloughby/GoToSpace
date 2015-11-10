@@ -111,6 +111,10 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-vs.csproj">
+      <Project>{D38ABC22-E5CC-9E65-EC47-032E95504576}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 	   Other similar extension points exist, see Microsoft.Common.targets.
