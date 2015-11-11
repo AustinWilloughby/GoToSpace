@@ -31,3 +31,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Sawing.unity
   - enabled: 1
     path: Assets/Scenes/JetFuel.unity
+  - enabled: 1
+    path: Assets/Scenes/Yard.unity
