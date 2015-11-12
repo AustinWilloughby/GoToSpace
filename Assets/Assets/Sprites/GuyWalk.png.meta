@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 7d15b44fb5254334ca26b692aa72928e
+timeCreated: 1447313061
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: GuyWalk_0
+    21300002: GuyWalk_1
+    21300004: GuyWalk_2
+    21300006: GuyWalk_3
+    21300008: GuyWalk_4
+    21300010: GuyWalk_5
+    21300012: GuyWalk_6
+    21300014: GuyWalk_7
+    21300016: GuyWalk_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 150
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: GuyWalk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 435
+        width: 210
+        height: 400
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GuyWalk_1
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 435
+        width: 210
+        height: 405
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GuyWalk_2
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 435
+        width: 210
+        height: 405
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GuyWalk_3
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 435
+        width: 210
+        height: 405
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GuyWalk_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15
+        width: 210
+        height: 400
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GuyWalk_5
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 15
+        width: 210
+        height: 400
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GuyWalk_6
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 15
+        width: 210
+        height: 400
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GuyWalk_7
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 17
+        width: 210
+        height: 400
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GuyWalk_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 50
+        width: 840
+        height: 643
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

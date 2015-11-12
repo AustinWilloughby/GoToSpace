@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: ae58a0e159ffd0b489566af85259483d
-timeCreated: 1442280710
+guid: aac29ae5b1d7157438988f4168994a54
+timeCreated: 1447313291
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Guy_0
-    21300002: Guy_1
-    21300004: Guy_2
-    21300006: Guy_3
-    21300008: Guy_4
-    21300010: Guy_5
+    21300000: Guy 1_0
+    21300002: Guy 1_1
+    21300004: Guy 1_2
+    21300006: Guy 1_3
+    21300008: Guy 1_4
+    21300010: Guy 1_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -50,71 +50,71 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 150
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Guy_0
+    - name: Guy 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 150
-        width: 100
-        height: 150
+        y: 405
+        width: 150
+        height: 405
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Guy_1
+    - name: Guy 1_1
       rect:
         serializedVersion: 2
-        x: 100
-        y: 150
-        width: 100
-        height: 150
+        x: 150
+        y: 405
+        width: 150
+        height: 405
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Guy_2
+    - name: Guy 1_2
       rect:
         serializedVersion: 2
-        x: 200
-        y: 150
-        width: 100
-        height: 150
+        x: 300
+        y: 405
+        width: 150
+        height: 405
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Guy_3
+    - name: Guy 1_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 100
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 150
+        height: 405
+      alignment: 9
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Guy_4
+    - name: Guy 1_4
       rect:
         serializedVersion: 2
-        x: 100
+        x: 150
         y: 0
-        width: 100
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 150
+        height: 405
+      alignment: 9
+      pivot: {x: .500000119, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Guy_5
+    - name: Guy 1_5
       rect:
         serializedVersion: 2
-        x: 200
+        x: 300
         y: 0
-        width: 100
-        height: 150
+        width: 150
+        height: 405
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

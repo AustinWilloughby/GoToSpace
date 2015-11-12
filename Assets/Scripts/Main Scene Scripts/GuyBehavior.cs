@@ -13,10 +13,12 @@ public class GuyBehavior : MonoBehaviour
     public bool WalkingToPosition;
     private Vector2 targetPosition;
     private float walkTimer;
+    private Animator animator;
 
     // Use this for initialization
     void Start()
     {
+        animator = GetComponent<Animator>();
         isWalking = false;
         facingRight = true;
         WalkingToPosition = false;
@@ -25,6 +27,7 @@ public class GuyBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        AnimationHandling();
         if (!WalkingToPosition)
         {
             RandomWalking();
@@ -79,6 +82,26 @@ public class GuyBehavior : MonoBehaviour
         }
     }
 
+    private void AnimationHandling()
+    {
+        if(facingRight)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        if(isWalking)
+        {
+            animator.CrossFade("GuyWalk", 0f);
+        }
+        else
+        {
+            animator.CrossFade("GuyIdle", 0f);
+        }
+    }
+
     //Random walking when not targeted walking
     private void RandomWalking()
     {
@@ -103,14 +126,14 @@ public class GuyBehavior : MonoBehaviour
                 }
             }
 
-            if (Random.Range(1, 50) == 1) // 1 in 50 chance to stop walking
+            if (Random.Range(1, 100) == 1) // 1 in 100 chance to stop walking
             {
                 isWalking = false;
             }
         }
         else
         {
-            if (Random.Range(1, 60) == 1) // 1 in 60 chance to start walking
+            if (Random.Range(1, 40) == 1) // 1 in 40 chance to start walking
             {
                 isWalking = true;
                 if (Random.Range(0, 2) == 1) // Can either start walking left or right
