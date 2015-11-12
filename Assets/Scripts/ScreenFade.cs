@@ -9,7 +9,7 @@ public class ScreenFade : MonoBehaviour
     private SpriteRenderer renderer;
     private Color tempColor;
     private bool fadeIn;
-    private bool fadeOut;
+    public bool fadeOut;
     private string newSceneString;
 
 

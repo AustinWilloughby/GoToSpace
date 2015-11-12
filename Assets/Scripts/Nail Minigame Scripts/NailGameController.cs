@@ -3,26 +3,46 @@ using System.Collections;
 
 public class NailGameController : MonoBehaviour {
 
-    public bool completed;
-    public bool failed;
     public GameObject nail1;
     public GameObject nail2;
     public GameObject nail3;
     public GameObject nail4;
 
+    private TextMesh textMesh;
+    private bool didAdvanceStage;
+    private bool waiting;
+    private float waitTime;
+    private string grade;
+    private int hits;
+    private int misses;
+
 	// Use this for initialization
 	void Start () {
-        completed = false;
-        failed = false;
+        textMesh = GameObject.Find("ScoreText").GetComponent<TextMesh>();
+        textMesh.text = "";
+        didAdvanceStage = false;
+        waiting = true;
+        waitTime = 2.0f;
+        grade = "F";
+
+        hits = 0;
+        misses = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        if (!completed)
+        if (!waiting)
         {
-            CheckStatus();
+            waitTime -= Time.deltaTime;
         }
+
+        if (waitTime <= 0 && Input.GetMouseButton(0))
+        {
+            Advance();
+        }
+
+        CheckStatus();
 	}
 
     private void CheckStatus()
@@ -32,20 +52,63 @@ public class NailGameController : MonoBehaviour {
             nail3.GetComponent<NailScript>().hits > 3 &&
             nail4.GetComponent<NailScript>().hits > 3)
         {
-            completed = true;
-            if (StatusTracker.Instance != null)
-            {
-                StatusTracker.Instance.AdvanceStage();
-            }
-            GameObject.Find("ScreenBlack").GetComponent<ScreenFade>().FadeOut("Workshop");
+            AssessGrade();
+            DisplayScoreText();
+            waiting = false;
         }
+    }
 
-        if (nail1.GetComponent<NailScript>().misses > 4 ||
-            nail2.GetComponent<NailScript>().misses > 4 ||
-            nail3.GetComponent<NailScript>().misses > 4 ||
-            nail4.GetComponent<NailScript>().misses > 4)
+    private void AssessGrade()
+    {
+        hits = nail1.GetComponent<NailScript>().hits +
+               nail2.GetComponent<NailScript>().hits +
+               nail3.GetComponent<NailScript>().hits +
+               nail4.GetComponent<NailScript>().hits;
+
+        misses = nail1.GetComponent<NailScript>().misses +
+                 nail2.GetComponent<NailScript>().misses +
+                 nail3.GetComponent<NailScript>().misses +
+                 nail4.GetComponent<NailScript>().misses;
+
+        switch (misses)
         {
-            failed = true;
+            case 0:
+                grade = "S";
+                break;
+            case 1:
+                grade = "A";
+                break;
+            case 2:
+            case 3:
+                grade = "B";
+                break;
+            case 4:
+            case 5:
+                grade = "C";
+                break;
+            case 6:
+            case 7:
+                grade = "D";
+                break;
+            default:
+                grade = "F";
+                break;
         }
+    }
+
+    private void DisplayScoreText()
+    {
+        GameObject.Find("ScreenBlack").GetComponent<ScreenFade>().fadeOut = true;
+        textMesh.text = "End Stage!\n\nHits: " + hits + "\nMisses: " + misses + "\n\nGrade: " + grade;
+    }
+
+    private void Advance()
+    {
+        if (StatusTracker.Instance != null && !didAdvanceStage)
+        {
+            StatusTracker.Instance.AdvanceStage();
+            didAdvanceStage = true;
+        }
+        GameObject.Find("ScreenBlack").GetComponent<ScreenFade>().FadeOut("Workshop");
     }
 }
