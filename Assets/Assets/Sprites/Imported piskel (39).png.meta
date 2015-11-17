@@ -1,9 +1,17 @@
 fileFormatVersion: 2
 guid: d21dc78cc77b61f4b921965e7aac556b
-timeCreated: 1445910449
+timeCreated: 1447766630
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Imported piskel (39)_0
+    21300002: Imported piskel (39)_1
+    21300004: Imported piskel (39)_2
+    21300006: Imported piskel (39)_3
+    21300008: Imported piskel (39)_4
+    21300010: Imported piskel (39)_5
+    21300012: Imported piskel (39)_6
+    21300014: Imported piskel (39)_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,15 +38,14 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +56,87 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Imported piskel (39)_0
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 363
+        width: 337
+        height: 590
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Imported piskel (39)_1
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 419
+        width: 338
+        height: 548
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Imported piskel (39)_2
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 419
+        width: 198
+        height: 548
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Imported piskel (39)_3
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 419
+        width: 198
+        height: 548
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Imported piskel (39)_4
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 419
+        width: 198
+        height: 548
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Imported piskel (39)_5
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 419
+        width: 198
+        height: 548
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Imported piskel (39)_6
+      rect:
+        serializedVersion: 2
+        x: 1861
+        y: 419
+        width: 197
+        height: 548
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Imported piskel (39)_7
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 125
+        width: 393
+        height: 184
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
