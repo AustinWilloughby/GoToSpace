@@ -6,6 +6,7 @@ public class Drill : MonoBehaviour {
     public float intensity = 30.0f;
 	public float distance = 25.0f;
 	public float overDrillTime = 0.0f;
+    private float timeToComplete = 0.0f;
 
 	private bool allComplete = false;
 
@@ -40,10 +41,14 @@ public class Drill : MonoBehaviour {
 		mousePos.z = 3.0f;
 		gameObject.transform.position = mousePos;
 
-		if (!waiting)
-		{
-			waitTime -= Time.deltaTime;
-		}
+        if (!waiting)
+        {
+            waitTime -= Time.deltaTime;
+        }
+        else
+        {
+            timeToComplete += Time.deltaTime;
+        }
 		if (waitTime <= 0 && Input.GetMouseButton(0))
 		{
 			Advance();
@@ -64,7 +69,7 @@ public class Drill : MonoBehaviour {
 	{
 		allComplete = true;
 		foreach (GameObject x in GameObject.FindGameObjectsWithTag("Point1")) {
-			if (x.GetComponent<Screw>().complete = false){
+			if (!x.GetComponent<Screw>().complete){
 				allComplete = false;
 			}
 		}
@@ -72,13 +77,36 @@ public class Drill : MonoBehaviour {
 
 	private void AssessGrade()
 	{
-
+        if (timeToComplete < 5.5f && overDrillTime < .2f)
+        {
+            grade = "S";
+        }
+        else if (timeToComplete < 6.0f && overDrillTime < .25f)
+        {
+            grade = "A";
+        }
+        else if (timeToComplete < 7.0f && overDrillTime < .35f)
+        {
+            grade = "B";
+        }
+        else if (timeToComplete < 8.0f && overDrillTime < .4f)
+        {
+            grade = "C";
+        }
+        else if (timeToComplete < 9.0f && overDrillTime < .45f)
+        {
+            grade = "D";
+        }
+        else
+        {
+            grade = "F";
+        }
 	}
 	
 	private void DisplayScoreText()
 	{
 		GameObject.Find("ScreenBlack").GetComponent<ScreenFade>().fadeOut = true;
-		textMesh.text = "End Stage!\n\nOverdrilled: " + Mathf.Round(overDrillTime * 100f) / 100f + "\n\nGrade: " + grade;
+		textMesh.text = "End Stage!\n\nTime Overdrilled: " + Mathf.Round(overDrillTime * 100f) / 100f + "\nTotal Time: " + Mathf.Round(timeToComplete * 100f) / 100f + "\n\nGrade: " + grade;
 	}
 	
 	private void Advance()

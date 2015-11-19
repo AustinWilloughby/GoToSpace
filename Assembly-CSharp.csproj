@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\CloudGenerator.cs" />
      <Compile Include="Assets\Scripts\CloudScript.cs" />
      <Compile Include="Assets\Scripts\Drill\Drill.cs" />
+     <Compile Include="Assets\Scripts\Drill\Screw.cs" />
      <Compile Include="Assets\Scripts\FuelCanister.cs" />
      <Compile Include="Assets\Scripts\Fueling\FuelCanisterScript.cs" />
      <Compile Include="Assets\Scripts\Fueling\FuelScript.cs" />

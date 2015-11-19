@@ -65,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -84,9 +85,6 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!127 &5
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!1 &6169249
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,6 +485,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -1053,7 +1052,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
       propertyPath: miniGames.Array.size
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: shipProgress.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 404366, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1103,6 +1106,35 @@ Prefab:
       propertyPath: miniGames.Array.data[3]
       value: Sawing
       objectReference: {fileID: 0}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: miniGames.Array.data[4]
+      value: Drill
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: shipProgress.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300012, guid: d21dc78cc77b61f4b921965e7aac556b,
+        type: 3}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: shipProgress.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300008, guid: d21dc78cc77b61f4b921965e7aac556b,
+        type: 3}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: shipProgress.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300006, guid: d21dc78cc77b61f4b921965e7aac556b,
+        type: 3}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: shipProgress.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300004, guid: d21dc78cc77b61f4b921965e7aac556b,
+        type: 3}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: shipProgress.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: d21dc78cc77b61f4b921965e7aac556b,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
   m_IsPrefabParent: 0

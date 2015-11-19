@@ -615,6 +615,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: miniGames.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: shipProgress.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 404366, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.97633934
@@ -646,6 +654,40 @@ Prefab:
     - target: {fileID: 404366, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: platform
+      value: 
+      objectReference: {fileID: 21300000, guid: bc1e78374b2a8e24daf6c09a96f20b86,
+        type: 3}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: shipProgress.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300012, guid: d21dc78cc77b61f4b921965e7aac556b,
+        type: 3}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: shipProgress.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300008, guid: d21dc78cc77b61f4b921965e7aac556b,
+        type: 3}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: shipProgress.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300006, guid: d21dc78cc77b61f4b921965e7aac556b,
+        type: 3}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: shipProgress.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300004, guid: d21dc78cc77b61f4b921965e7aac556b,
+        type: 3}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: shipProgress.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: d21dc78cc77b61f4b921965e7aac556b,
+        type: 3}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: miniGames.Array.data[4]
+      value: Drill
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}

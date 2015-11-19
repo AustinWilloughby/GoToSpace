@@ -40,6 +40,9 @@ public class StatusTracker : MonoBehaviour
     private SpriteRenderer sky;
     private int itemsLeft;
 
+    public Sprite platform;
+    public Sprite[] shipProgress;
+
     // Use this for initialization
     void Start()
     {
@@ -50,7 +53,8 @@ public class StatusTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckSky();   
+        CheckSky();
+        updateShipSprite();
     }
 
     public void AdvanceStage()
@@ -112,6 +116,51 @@ public class StatusTracker : MonoBehaviour
                 sky = GameObject.Find("SkyColor").GetComponent<SpriteRenderer>();
             }
             catch { }
+        }
+    }
+
+    private void updateShipSprite()
+    {
+        if (GameObject.Find("ShipProgress") != null)
+        {
+            SpriteRenderer shipSprite = GameObject.Find("ShipProgress").GetComponent<SpriteRenderer>();
+            SpriteRenderer platformSprite = GameObject.Find("ShipProgressPlatform").GetComponent<SpriteRenderer>();
+
+            switch (currentStage)
+            {
+                case CurrentlyBuilding.Platform:
+                    platformSprite.sprite = null;
+                    shipSprite.sprite = null;
+                    break;
+                case CurrentlyBuilding.Skeleton:
+                    platformSprite.sprite = platform;
+                    shipSprite.sprite = null;
+                    break;
+                case CurrentlyBuilding.Interior:
+                    platformSprite.sprite = platform;
+                    shipSprite.sprite = shipProgress[0];
+                    break;
+                case CurrentlyBuilding.CrudeExterior:
+                    platformSprite.sprite = platform;
+                    shipSprite.sprite = shipProgress[1];
+                    break;
+                case CurrentlyBuilding.SandingExterior:
+                    platformSprite.sprite = platform;
+                    shipSprite.sprite = shipProgress[2];
+                    break;
+                case CurrentlyBuilding.AddingFins:
+                    platformSprite.sprite = platform;
+                    shipSprite.sprite = shipProgress[3];
+                    break;
+                case CurrentlyBuilding.AddingWindow:
+                    platformSprite.sprite = platform;
+                    shipSprite.sprite = shipProgress[4];
+                    break;
+                default:
+                    platformSprite = null;
+                    shipSprite = null;
+                    break;
+            }
         }
     }
 }
