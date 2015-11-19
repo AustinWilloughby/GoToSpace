@@ -12,16 +12,20 @@ public class GuyBehavior : MonoBehaviour
 
     public bool WalkingToPosition;
     private Vector2 targetPosition;
-    private float walkTimer;
     private Animator animator;
+    private float behaviorTimer;
+    private bool possiblyTurn;
+ 
 
     // Use this for initialization
     void Start()
     {
         animator = GetComponent<Animator>();
         isWalking = false;
+        possiblyTurn = true;
         facingRight = true;
         WalkingToPosition = false;
+        behaviorTimer = Random.Range(1.0f, 5.0f);
     }
 
     // Update is called once per frame
@@ -71,7 +75,6 @@ public class GuyBehavior : MonoBehaviour
                 facingRight = false;
                 newPos.x = transform.position.x - (walkSpeed);
             }
-            walkTimer += Time.deltaTime;
             newPos.y = transform.position.y;
             newPos.z = transform.position.z;
             transform.position = newPos;
@@ -94,57 +97,61 @@ public class GuyBehavior : MonoBehaviour
         }
         if(isWalking)
         {
-            animator.CrossFade("GuyWalk", 0f);
+            animator.CrossFade("GuyWalk", 0.0f);
         }
         else
         {
-            animator.CrossFade("GuyIdle", 0f);
+            animator.CrossFade("GuyIdle", 0.0f);
         }
     }
 
     //Random walking when not targeted walking
     private void RandomWalking()
     {
-        if (isWalking)
+        behaviorTimer -= Time.deltaTime;
+
+        //If we need a new behavior
+        if(behaviorTimer <= 0)
         {
-            if (facingRight)
+            possiblyTurn = true;
+            isWalking = !isWalking;
+            behaviorTimer = Random.Range(1.5f, 4.0f);
+        }
+        //If idiling and getting close to walking
+        else if(possiblyTurn && !isWalking && behaviorTimer > 0 && behaviorTimer < Random.Range(.3f, 1.0f))
+        {
+            possiblyTurn = false;
+            if (Random.Range(0, 2) == 1)
             {
-                Vector3 temp = transform.position;
-                temp.x += walkSpeed;
-                if (transform.position.x < rightBound)
-                {
-                    transform.position = temp;
-                }
+                facingRight = true;
             }
             else
             {
-                Vector3 temp = transform.position;
-                temp.x -= walkSpeed;
-                if (transform.position.x > leftBound)
-                {
-                    transform.position = temp;
-                }
-            }
-
-            if (Random.Range(1, 100) == 1) // 1 in 100 chance to stop walking
-            {
-                isWalking = false;
+                facingRight = false;
             }
         }
-        else
+
+        //If walking
+        if(isWalking)
         {
-            if (Random.Range(1, 40) == 1) // 1 in 40 chance to start walking
+            Vector3 temp = transform.position;
+            if(facingRight)
             {
-                isWalking = true;
-                if (Random.Range(0, 2) == 1) // Can either start walking left or right
-                {
-                    facingRight = true;
-                }
-                else
-                {
-                    facingRight = false;
-                }
+                temp.x += walkSpeed;
             }
+            else
+            {
+                temp.x -= walkSpeed;
+            }
+
+            if(temp.x > rightBound || temp.x < leftBound)
+            {
+                temp.x = transform.position.x;
+                isWalking = false;
+                behaviorTimer = Random.Range(.5f, 2.0f);
+            }
+
+            transform.position = temp;
         }
     }
 }

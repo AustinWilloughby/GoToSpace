@@ -68,10 +68,10 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
  </Reference>
  <Reference Include="TouchScript.Editor">
- <HintPath>C:/Users/Ryan/Desktop/GoToSpace/Assets/TouchScript/Editor/TouchScript.Editor.dll</HintPath>
+ <HintPath>C:/Users/Austin/Desktop/Classes/Side Projects/GoToSpace/Assets/TouchScript/Editor/TouchScript.Editor.dll</HintPath>
  </Reference>
  <Reference Include="TouchScript">
- <HintPath>C:/Users/Ryan/Desktop/GoToSpace/Assets/TouchScript/Plugins/TouchScript.dll</HintPath>
+ <HintPath>C:/Users/Austin/Desktop/Classes/Side Projects/GoToSpace/Assets/TouchScript/Plugins/TouchScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
