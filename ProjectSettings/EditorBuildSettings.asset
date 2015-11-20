@@ -33,3 +33,5 @@ EditorBuildSettings:
     path: Assets/Scenes/JetFuel.unity
   - enabled: 1
     path: Assets/Scenes/Yard.unity
+  - enabled: 1
+    path: Assets/Scenes/BlastOff.unity

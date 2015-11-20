@@ -54,7 +54,7 @@ public class StatusTracker : MonoBehaviour
     void Update()
     {
         CheckSky();
-        updateShipSprite();
+        UpdateShipSprite();
     }
 
     public void AdvanceStage()
@@ -83,6 +83,7 @@ public class StatusTracker : MonoBehaviour
     void OnLevelWasLoaded(int level) //Called whenever a new scene loads
     {
         TargetSkyBox();
+        UpdateShipSprite();
     }
 
     private void TargetSkyBox() //Attempts to lock to scenes skybox
@@ -119,7 +120,7 @@ public class StatusTracker : MonoBehaviour
         }
     }
 
-    private void updateShipSprite()
+    private void UpdateShipSprite()
     {
         if (GameObject.Find("ShipProgress") != null)
         {
@@ -155,6 +156,9 @@ public class StatusTracker : MonoBehaviour
                 case CurrentlyBuilding.AddingWindow:
                     platformSprite.sprite = platform;
                     shipSprite.sprite = shipProgress[4];
+                    break;
+                case CurrentlyBuilding.ToSpace:
+                    Application.LoadLevel("Title");
                     break;
                 default:
                     platformSprite = null;

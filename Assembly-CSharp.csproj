@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\Fueling\FuelScript.cs" />
      <Compile Include="Assets\Scripts\Fueling\FuelTankScript.cs" />
      <Compile Include="Assets\Scripts\InventoryTest.cs" />
+     <Compile Include="Assets\Scripts\LaunchScript.cs" />
      <Compile Include="Assets\Scripts\Main Scene Scripts\DoorScript.cs" />
      <Compile Include="Assets\Scripts\Main Scene Scripts\GuyBehavior.cs" />
      <Compile Include="Assets\Scripts\Main Scene Scripts\MaterialScript.cs" />
