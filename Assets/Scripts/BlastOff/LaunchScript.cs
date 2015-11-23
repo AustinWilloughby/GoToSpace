@@ -14,6 +14,7 @@ public class LaunchScript : MonoBehaviour
     public GameObject rocket;
     public RocketThruster rocketThrust;
     public float sequenceTime;
+    public AudioSource soundEffect;
     private float sequenceTimer;
     public launchStage currentStage;
 
@@ -28,10 +29,19 @@ public class LaunchScript : MonoBehaviour
     void Update()
     {
         sequenceTimer -= Time.deltaTime;
+        if (sequenceTimer < sequenceTime - 1)
+        {
+            if (!soundEffect.isPlaying && sequenceTimer > 10)
+            {
+                soundEffect.Play();
+            }
+        }
+
         if(sequenceTimer > (sequenceTime - 2))
         {
             currentStage = launchStage.Stationary;
         }
+
         else if(sequenceTimer > (sequenceTime - 4) && sequenceTimer < (sequenceTime - 2))
         {
             currentStage = launchStage.FiringUp;
@@ -85,15 +95,46 @@ public class LaunchScript : MonoBehaviour
 
                 //Default is standin for cruise
             default:
+                rocketThrust.particleInterval = 0.001f;
+
+                rocketPos.y += 3.0f * Time.deltaTime;
+                rocket.transform.position = rocketPos;
                 if (rocket.transform.rotation.z < - .03f || rocket.transform.rotation.z > 360.0f - .03f)
                 {
-                    rocket.transform.Rotate(0, 0, Random.Range(0.0f, .01f));
+                    rocket.transform.Rotate(0, 0, Random.Range(0.0f, .03f));
                 }
                 else if (rocket.transform.rotation.z > .03f)
                 {
-                    rocket.transform.Rotate(0, 0, Random.Range(-0.01f, 0.0f));
+                    rocket.transform.Rotate(0, 0, Random.Range(-0.03f, 0.0f));
+                }
+                else
+                {
+                    rocket.transform.rotation.SetEulerAngles(0, 0, 0);
                 }
                 break;
+        }
+
+        if(rocket.transform.position.y > transform.position.y && transform.position.y < 28.0f)
+        {
+            Vector3 cameraPos = transform.position;
+            cameraPos.y = rocket.transform.position.y;
+            if(cameraPos.x < rocket.transform.position.x)
+            {
+                cameraPos.x += 5 * Time.deltaTime;
+            }
+            transform.position = cameraPos;
+        }
+        else if(transform.position.y > 28.0f)
+        {
+            Color black = GetComponentInChildren<SpriteRenderer>().color;
+            black.a += .28f * Time.deltaTime;
+            GetComponentInChildren<SpriteRenderer>().color = black;
+
+            print(black.a);
+            if(black.a >= 1)
+            {
+                Application.LoadLevel("InsideShip");
+            }
         }
     }
 }
