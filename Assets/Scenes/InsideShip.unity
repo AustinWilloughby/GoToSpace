@@ -430,7 +430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeRate: .800000012
-  newSong: GTS - Workshop
+  newSong: GTS - In Space
   fadeOut: 0
 --- !u!212 &1882143884
 SpriteRenderer:

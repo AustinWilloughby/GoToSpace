@@ -158,7 +158,7 @@ public class StatusTracker : MonoBehaviour
                     shipSprite.sprite = shipProgress[4];
                     break;
                 case CurrentlyBuilding.ToSpace:
-                    Application.LoadLevel("Title");
+                    Application.LoadLevel("BlastOff");
                     break;
                 default:
                     platformSprite = null;

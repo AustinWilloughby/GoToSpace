@@ -15,6 +15,8 @@ public class LaunchScript : MonoBehaviour
     public RocketThruster rocketThrust;
     public float sequenceTime;
     public AudioSource soundEffect;
+    public MusicSingleton musicSingleton;
+    private float restoreVolume;
     private float sequenceTimer;
     public launchStage currentStage;
 
@@ -28,6 +30,26 @@ public class LaunchScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(musicSingleton == null)
+        {
+            if(MusicSingleton.Instance != null)
+            {
+                musicSingleton = MusicSingleton.Instance;
+                restoreVolume = musicSingleton.volume;
+            }
+        }
+        else
+        {
+            if(sequenceTimer < sequenceTime)
+            {
+                musicSingleton.volume -= .5f * Time.deltaTime;
+            }
+            else if (sequenceTimer <= 0)
+            {
+                musicSingleton.volume = restoreVolume;
+            }
+        }
+
         sequenceTimer -= Time.deltaTime;
         if (sequenceTimer < sequenceTime - 1)
         {
@@ -130,9 +152,10 @@ public class LaunchScript : MonoBehaviour
             black.a += .28f * Time.deltaTime;
             GetComponentInChildren<SpriteRenderer>().color = black;
 
-            print(black.a);
             if(black.a >= 1)
             {
+                musicSingleton.audioPlayer.Stop();
+                musicSingleton.volume = restoreVolume;
                 Application.LoadLevel("InsideShip");
             }
         }
