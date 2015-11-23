@@ -687,6 +687,10 @@ Prefab:
         type: 3}
     - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
       propertyPath: miniGames.Array.data[4]
+      value: JetFuel
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431986, guid: 06f53dba80b14934396117bedb3ed52a, type: 2}
+      propertyPath: miniGames.Array.data[2]
       value: Drill
       objectReference: {fileID: 0}
     m_RemovedComponents: []

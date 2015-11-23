@@ -152,6 +152,10 @@ public class StatusTracker : MonoBehaviour
                 case CurrentlyBuilding.AddingFins:
                     platformSprite.sprite = platform;
                     shipSprite.sprite = shipProgress[3];
+
+                    //----------REMOVE LATER, FOR TEST BUILD ----------
+                    Application.LoadLevel("BlastOff");
+
                     break;
                 case CurrentlyBuilding.AddingWindow:
                     platformSprite.sprite = platform;
