@@ -76,19 +76,19 @@ public class LaunchScript : MonoBehaviour
             case launchStage.LiftOff:
                 rocketThrust.particleInterval = .02f;
 
-                rocketPos.y += 3.0f * Time.deltaTime;
+                rocketPos.y += 4.0f * Time.deltaTime;
                 rocket.transform.position = rocketPos;
                 if (rocket.transform.rotation.z < -1.0f || rocket.transform.rotation.z > 359.0f)
                 {
-                    rocket.transform.Rotate(0, 0, Random.Range(0.0f, .3f));
+                    rocket.transform.Rotate(0, 0, Random.Range(0.0f, .15f));
                 }
                 else if(rocket.transform.rotation.z > 1.0)
                 {
-                    rocket.transform.Rotate(0, 0, Random.Range(-0.3f, 0.0f));
+                    rocket.transform.Rotate(0, 0, Random.Range(-0.15f, 0.0f));
                 }
                 else
                 {
-                    rocket.transform.Rotate(0, 0, Random.Range(-.5f, .5f));
+                    rocket.transform.Rotate(0, 0, Random.Range(-.3f, .3f));
                 }
                 break;
 
@@ -97,7 +97,7 @@ public class LaunchScript : MonoBehaviour
             default:
                 rocketThrust.particleInterval = 0.001f;
 
-                rocketPos.y += 3.0f * Time.deltaTime;
+                rocketPos.y += 3.5f * Time.deltaTime;
                 rocket.transform.position = rocketPos;
                 if (rocket.transform.rotation.z < - .03f || rocket.transform.rotation.z > 360.0f - .03f)
                 {
@@ -114,17 +114,17 @@ public class LaunchScript : MonoBehaviour
                 break;
         }
 
-        if(rocket.transform.position.y > transform.position.y && transform.position.y < 28.0f)
+        if(rocket.transform.position.y > transform.position.y && transform.position.y < 35.0f)
         {
             Vector3 cameraPos = transform.position;
             cameraPos.y = rocket.transform.position.y;
             if(cameraPos.x < rocket.transform.position.x)
             {
-                cameraPos.x += 5 * Time.deltaTime;
+                cameraPos.x += 2 * Time.deltaTime;
             }
             transform.position = cameraPos;
         }
-        else if(transform.position.y > 28.0f)
+        else if(transform.position.y > 35.0f)
         {
             Color black = GetComponentInChildren<SpriteRenderer>().color;
             black.a += .28f * Time.deltaTime;
