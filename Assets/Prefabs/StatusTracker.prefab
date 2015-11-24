@@ -53,9 +53,9 @@ MonoBehaviour:
   miniGames:
   - Nail
   - Weld
-  - JetFuel
-  - Sawing
   - Drill
+  - Sawing
+  - JetFuel
   platform: {fileID: 21300000, guid: bc1e78374b2a8e24daf6c09a96f20b86, type: 3}
   shipProgress:
   - {fileID: 21300012, guid: d21dc78cc77b61f4b921965e7aac556b, type: 3}

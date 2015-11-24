@@ -77,23 +77,23 @@ public class Drill : MonoBehaviour {
 
 	private void AssessGrade()
 	{
-        if (timeToComplete < 5.5f && overDrillTime < .2f)
+        if (timeToComplete < 10.5f && overDrillTime < .2f)
         {
             grade = "S";
         }
-        else if (timeToComplete < 6.0f && overDrillTime < .25f)
+        else if (timeToComplete < 11.0f && overDrillTime < .25f)
         {
             grade = "A";
         }
-        else if (timeToComplete < 7.0f && overDrillTime < .35f)
+        else if (timeToComplete < 12.0f && overDrillTime < .35f)
         {
             grade = "B";
         }
-        else if (timeToComplete < 8.0f && overDrillTime < .4f)
+        else if (timeToComplete < 13.0f && overDrillTime < .4f)
         {
             grade = "C";
         }
-        else if (timeToComplete < 9.0f && overDrillTime < .45f)
+        else if (timeToComplete < 14.0f && overDrillTime < .45f)
         {
             grade = "D";
         }
