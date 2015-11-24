@@ -65,7 +65,6 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -85,6 +84,9 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!127 &5
+LevelGameManager:
+  m_ObjectHideFlags: 0
 --- !u!1 &187917250
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +447,6 @@ GameObject:
   - 92: {fileID: 1288940922}
   - 124: {fileID: 1288940921}
   - 81: {fileID: 1288940920}
-  - 114: {fileID: 1288940919}
   - 114: {fileID: 1288940918}
   m_Layer: 0
   m_Name: Main Camera
@@ -480,22 +481,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 16
   height: 9
---- !u!114 &1288940919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1288940916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 902259921, guid: 20c2a163775f09b4cafa29b19d0c9204, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Main Camera
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  layerIds: 00000000
 --- !u!81 &1288940920
 AudioListener:
   m_ObjectHideFlags: 0
@@ -545,7 +530,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -793,6 +777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeRate: .800000012
   newSong: GTS - Shop 1
+  fadeOut: 0
 --- !u!212 &1877030704
 SpriteRenderer:
   m_ObjectHideFlags: 0

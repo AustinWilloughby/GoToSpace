@@ -37,6 +37,9 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+--- !u!127 &3
+LevelGameManager:
+  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -65,7 +68,6 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -97,7 +99,6 @@ GameObject:
   - 92: {fileID: 53971239}
   - 124: {fileID: 53971238}
   - 81: {fileID: 53971237}
-  - 114: {fileID: 53971235}
   - 114: {fileID: 53971234}
   m_Layer: 0
   m_Name: Main Camera
@@ -132,22 +133,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 16
   height: 9
---- !u!114 &53971235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 53971232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 902259921, guid: 20c2a163775f09b4cafa29b19d0c9204, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Main Camera
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  layerIds: 00000000
 --- !u!81 &53971237
 AudioListener:
   m_ObjectHideFlags: 0
@@ -197,7 +182,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10

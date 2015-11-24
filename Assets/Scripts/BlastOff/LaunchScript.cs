@@ -154,8 +154,11 @@ public class LaunchScript : MonoBehaviour
 
             if(black.a >= 1)
             {
-                musicSingleton.audioPlayer.Stop();
-                musicSingleton.volume = restoreVolume;
+				if(musicSingleton != null)
+				{
+                	musicSingleton.audioPlayer.Stop();
+                	musicSingleton.volume = restoreVolume;
+				}
                 Application.LoadLevel("InsideShip");
             }
         }

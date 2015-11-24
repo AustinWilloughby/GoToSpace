@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7d15b44fb5254334ca26b692aa72928e
-timeCreated: 1447313061
+timeCreated: 1448373605
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -46,7 +46,6 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -65,7 +64,7 @@ TextureImporter:
         x: 0
         y: 435
         width: 210
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,19 +132,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 630
-        y: 17
+        y: 15
         width: 210
         height: 400
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: GuyWalk_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 50
-        width: 840
-        height: 643
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
