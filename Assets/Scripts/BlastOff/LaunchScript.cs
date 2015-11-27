@@ -131,7 +131,7 @@ public class LaunchScript : MonoBehaviour
                 }
                 else
                 {
-                    rocket.transform.rotation.SetEulerAngles(0, 0, 0);
+                    //rocket.transform.rotation.SetEulerAngles(0, 0, 0);
                 }
                 break;
         }
