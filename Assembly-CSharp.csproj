@@ -74,6 +74,8 @@
      <Compile Include="Assets\Scripts\Globals\StatusTracker.cs" />
      <Compile Include="Assets\Scripts\GuyMinigameScript.cs" />
      <Compile Include="Assets\Scripts\InsideShip\ComputerLight.cs" />
+     <Compile Include="Assets\Scripts\InsideShip\PlanetGenerator.cs" />
+     <Compile Include="Assets\Scripts\InsideShip\PlanetScript.cs" />
      <Compile Include="Assets\Scripts\InventoryTest.cs" />
      <Compile Include="Assets\Scripts\Main Scene Scripts\DoorScript.cs" />
      <Compile Include="Assets\Scripts\Main Scene Scripts\GuyBehavior.cs" />
@@ -100,17 +102,11 @@
      <Compile Include="Assets\Scripts\Welding\WeldTarget.cs" />
      <None Include="Assets\Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\ProjectSettings\ProjectVersion.txt" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
