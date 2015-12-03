@@ -65,7 +65,6 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -85,6 +84,9 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!127 &5
+LevelGameManager:
+  m_ObjectHideFlags: 0
 --- !u!4 &348689 stripped
 Transform:
   m_PrefabParentObject: {fileID: 452338, guid: 3cb1d3ff85dac8e4db9e70b85d1f229e, type: 2}
@@ -2032,7 +2034,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -7262,7 +7263,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1319627994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02437dd8e5184874eb26f6f551770da9, type: 3}
+  m_Script: {fileID: 11500000, guid: 45786b4a954954443997a12b273208e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1319739156 stripped

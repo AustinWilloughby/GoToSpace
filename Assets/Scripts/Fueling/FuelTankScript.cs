@@ -46,7 +46,7 @@ public class FuelTankScript : MonoBehaviour {
             Advance();
         }
 
-        if (GameObject.FindGameObjectWithTag("fuel") == null)
+        if (GameObject.FindGameObjectWithTag("fuel") == null || timeToComplete > 60.0f || (timeToComplete > 40.0f && dead))
         {
             AssessGrade();
             DisplayScoreText();
@@ -105,7 +105,17 @@ public class FuelTankScript : MonoBehaviour {
     private void DisplayScoreText()
     {
         GameObject.Find("ScreenBlack").GetComponent<ScreenFade>().fadeOut = true;
-        textMesh.text = "End Stage!\n\nTime: " + Mathf.Round(timeToComplete * 100f) / 100f + "\n\nGrade: " + grade;
+		if (dead) {
+			textMesh.text = "RIP";
+		}
+		else if (timeToComplete < 60.0f) 
+		{
+			textMesh.text = "End Stage!\n\nTime: " + Mathf.Round (timeToComplete * 100f) / 100f + "\n\nGrade: " + grade;
+		} 
+		else 
+		{
+			textMesh.text = "Time Up!\n\nTime: " + Mathf.Round (timeToComplete * 100f) / 100f + "\n\nGrade: " + grade;
+		}
     }
 
     private void Advance()
