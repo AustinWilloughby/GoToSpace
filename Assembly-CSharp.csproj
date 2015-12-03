@@ -94,6 +94,7 @@
      <Compile Include="Assets\Scripts\Splash Scripts\IntroTransition.cs" />
      <Compile Include="Assets\Scripts\Splash Scripts\Splash.cs" />
      <Compile Include="Assets\Scripts\Splash Scripts\Tip.cs" />
+     <Compile Include="Assets\Scripts\Street\BobScript.cs" />
      <Compile Include="Assets\Scripts\Street\Fountain.cs" />
      <Compile Include="Assets\Scripts\Street\WaterParticleScript.cs" />
      <Compile Include="Assets\Scripts\Welding\Spark.cs" />
