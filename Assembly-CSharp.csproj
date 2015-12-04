@@ -62,7 +62,6 @@
      <Compile Include="Assets\Scripts\Drill\Drill.cs" />
      <Compile Include="Assets\Scripts\Drill\Screw.cs" />
      <Compile Include="Assets\Scripts\Fueling\FuelCanister.cs" />
-     <Compile Include="Assets\Scripts\Fueling\FuelCanisterScript.cs" />
      <Compile Include="Assets\Scripts\Fueling\FuelScript.cs" />
      <Compile Include="Assets\Scripts\Fueling\FuelTankScript.cs" />
      <Compile Include="Assets\Scripts\Globals\CameraScale.cs" />
@@ -103,11 +102,17 @@
      <Compile Include="Assets\Scripts\Welding\WeldTarget.cs" />
      <None Include="Assets\Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\ProjectSettings\ProjectVersion.txt" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
