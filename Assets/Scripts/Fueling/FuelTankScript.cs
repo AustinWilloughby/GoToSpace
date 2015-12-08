@@ -46,7 +46,11 @@ public class FuelTankScript : MonoBehaviour {
             Advance();
         }
 
+<<<<<<< HEAD
         if (GameObject.FindGameObjectWithTag("fuel") == null || timeToComplete > 60.0f || (timeToComplete > 25.0f && dead))
+=======
+        if (GameObject.FindGameObjectWithTag("fuel") == null || timeToComplete > 60.0f || (timeToComplete > 35.0f && dead))
+>>>>>>> origin/master
         {
             AssessGrade();
             DisplayScoreText();
