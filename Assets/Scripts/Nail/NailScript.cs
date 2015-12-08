@@ -11,13 +11,14 @@ public class NailScript : MonoBehaviour {
     public Sprite sp2;
     public Sprite sp3;
     public Sprite sp4;
+	public Sprite bent;
 
 	// Use this for initialization
 	void Start () {
         hitbox = gameObject.transform.GetChild(0);
         hits = 0;
         misses = 0;
-        darkness = 0.5f;
+        darkness = 1.0f;
         GetComponent<SpriteRenderer>().color = new Color(darkness, darkness, darkness, 1.0f);
 	}
 	
@@ -48,11 +49,16 @@ public class NailScript : MonoBehaviour {
             hits++;
         }
 
-        else if (Input.GetMouseButtonDown(0) && GetComponent<ItemScript>().mousedOver)
+        else if (Input.GetMouseButtonDown(0) && GetComponent<ItemScript>().mousedOver && misses <= 2)
         {
             misses++;
             darkness -= .1f;
             GetComponent<SpriteRenderer>().color = new Color(darkness, darkness, darkness, 1.0f);
         }
+
+		if (misses > 2) {
+			darkness = 1.0f;
+			GetComponent<SpriteRenderer>().sprite = bent;
+		}
 	}
 }

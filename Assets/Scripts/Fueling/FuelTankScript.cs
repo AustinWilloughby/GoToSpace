@@ -14,7 +14,7 @@ public class FuelTankScript : MonoBehaviour {
     private float waitTime;
     private string grade;
 
-    private float timeToComplete;
+    public float timeToComplete;
 
 	// Use this for initialization
 	void Start () {
@@ -36,7 +36,7 @@ public class FuelTankScript : MonoBehaviour {
         {
             waitTime -= Time.deltaTime;
         }
-        else
+        else if (GameObject.Find ("SpeechBubble").GetComponent<MiniGameTutorial>().done)
         {
             timeToComplete += Time.deltaTime;
         }
@@ -46,7 +46,7 @@ public class FuelTankScript : MonoBehaviour {
             Advance();
         }
 
-        if (GameObject.FindGameObjectWithTag("fuel") == null || timeToComplete > 60.0f || (timeToComplete > 40.0f && dead))
+        if (GameObject.FindGameObjectWithTag("fuel") == null || timeToComplete > 60.0f || (timeToComplete > 25.0f && dead))
         {
             AssessGrade();
             DisplayScoreText();
@@ -71,23 +71,23 @@ public class FuelTankScript : MonoBehaviour {
 
     private void AssessGrade()
     {
-        if (timeToComplete <= 14.5f)
+        if (timeToComplete <= 15.5f)
         {
             grade = "S";
         }
-        else if (timeToComplete <= 18.0f)
+        else if (timeToComplete <= 23.0f)
         {
             grade = "A";
         }
-        else if (timeToComplete <= 22.0f)
+        else if (timeToComplete <= 29.0f)
         {
             grade = "B";
         }
-        else if (timeToComplete <= 26.0f)
+        else if (timeToComplete <= 35.0f)
         {
             grade = "C";
         }
-        else if (timeToComplete <= 30.0f)
+        else if (timeToComplete <= 50.0f)
         {
             grade = "D";
         }

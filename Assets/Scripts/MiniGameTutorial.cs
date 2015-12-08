@@ -7,7 +7,7 @@ public class MiniGameTutorial : MonoBehaviour {
     Vector3 temp;
     public bool growing;
     bool shrinking;
-
+	public bool done;
     float waiting;
 
     // Use this for initialization
@@ -18,7 +18,7 @@ public class MiniGameTutorial : MonoBehaviour {
         text.GetComponent<TextMesh>().text = "";
         temp = new Vector3(.3f, 0, 0.1f);
         transform.localScale = temp;
-
+		done = false;
         waiting = 3.0f;
     }
 
@@ -34,6 +34,7 @@ public class MiniGameTutorial : MonoBehaviour {
             if (Input.GetMouseButton(0))
             {
                 shrinking = true;
+				done = true;
             }
         }
 

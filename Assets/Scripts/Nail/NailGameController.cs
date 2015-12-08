@@ -47,10 +47,10 @@ public class NailGameController : MonoBehaviour {
 
     private void CheckStatus()
     {
-        if (nail1.GetComponent<NailScript>().hits > 3 &&
-            nail2.GetComponent<NailScript>().hits > 3 &&
-            nail3.GetComponent<NailScript>().hits > 3 &&
-            nail4.GetComponent<NailScript>().hits > 3)
+		if ((nail1.GetComponent<NailScript>().hits > 3 || nail1.GetComponent<NailScript>().misses > 2) &&
+		    (nail2.GetComponent<NailScript>().hits > 3 || nail2.GetComponent<NailScript>().misses > 2) &&
+			(nail3.GetComponent<NailScript>().hits > 3 || nail3.GetComponent<NailScript>().misses > 2) &&
+			(nail4.GetComponent<NailScript>().hits > 3 || nail4.GetComponent<NailScript>().misses > 2))
         {
             AssessGrade();
             DisplayScoreText();
