@@ -45,7 +45,7 @@ public class MiniGameTutorial : MonoBehaviour {
             switch (Application.loadedLevelName)
             {
                 case "Nail":
-                    text.GetComponent<TextMesh>().text = "Tap the head of the nail to build\n the platform.Careful not to miss\nor you might damage the nail.";
+                    text.GetComponent<TextMesh>().text = "Tap the head of the nail to build\nthe platform. Careful not to miss\nor you might damage the nail.";
                     break;
                 case "Weld":
                     text.GetComponent<TextMesh>().text = "Weld the four grey lines. You can\ntell they're done when they are\ndark, but don't over weld them.";

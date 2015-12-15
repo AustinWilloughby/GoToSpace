@@ -12,6 +12,7 @@ public class ScreenFade : MonoBehaviour
     public bool fadeOut;
     private string newSceneString;
 
+	public bool shouldAdvanceStage = false;
 
     // Use this for initialization
     void Start()
@@ -54,6 +55,10 @@ public class ScreenFade : MonoBehaviour
                 fadeOut = false;
                 if(newSceneString != null)
                 {
+					if (shouldAdvanceStage){
+						GameObject.Find("StatusTracker").GetComponent<StatusTracker>().AdvanceStage();
+						shouldAdvanceStage = false;
+					}
                     Application.LoadLevel(newSceneString);
                 }
             }

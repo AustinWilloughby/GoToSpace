@@ -3,8 +3,6 @@ using System.Collections;
 
 public class WorkbenchScript : MonoBehaviour
 {
-    public int numberMaterials = 3;
-    private int progress = 0;
     // Use this for initialization
     void Start()
     {
@@ -13,18 +11,18 @@ public class WorkbenchScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
-    void OnColliderEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "CraftingMat")
         {
             if(StatusTracker.Instance != null)
             {
-                StatusTracker.Instance.CollectItem();
+                StatusTracker.Instance.CollectItem(col.gameObject.name);
             }
-            progress++;
-            col.gameObject.GetComponent<MaterialScript>().ObjectToWorkbench(progress, numberMaterials);
+            col.gameObject.GetComponent<MaterialScript>().ObjectToWorkbench();
             col.tag = "Untagged"; 
         }
     }
