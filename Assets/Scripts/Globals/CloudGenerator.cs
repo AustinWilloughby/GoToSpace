@@ -54,7 +54,7 @@ public class CloudGenerator : MonoBehaviour
             randPos.y += Random.Range(0f, 15.0f * sizeMultiplier * heightMultiplier);
             randPos.z += Random.Range(0f, 5.0f * sizeMultiplier);
 
-            GameObject cloud = cloudPrefabs[Random.Range(0, cloudPrefabs.Length - 1)];
+            GameObject cloud = cloudPrefabs[Random.Range(0, cloudPrefabs.Length)];
 
             float randScale = Random.Range(.2f * sizeMultiplier, .5f * sizeMultiplier);
             cloud.transform.localScale = new Vector3(randScale, randScale, 1);
