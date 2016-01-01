@@ -56,6 +56,10 @@
      <Compile Include="Assets\Assets\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
      <Compile Include="Assets\Assets\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
      <Compile Include="Assets\Assets\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
+     <Compile Include="Assets\Scripts\Asteroids\AsteroidSpawner.cs" />
+     <Compile Include="Assets\Scripts\Asteroids\ProjectileScript.cs" />
+     <Compile Include="Assets\Scripts\Asteroids\Ship.cs" />
+     <Compile Include="Assets\Scripts\Asteroids\TouchTrack.cs" />
      <Compile Include="Assets\Scripts\BlastOff\LaunchParticle.cs" />
      <Compile Include="Assets\Scripts\BlastOff\LaunchScript.cs" />
      <Compile Include="Assets\Scripts\BlastOff\RocketThruster.cs" />
@@ -102,17 +106,11 @@
      <Compile Include="Assets\Scripts\Welding\WeldTarget.cs" />
      <None Include="Assets\Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\ProjectSettings\ProjectVersion.txt" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>

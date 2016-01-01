@@ -9,6 +9,9 @@ public class Splash : MonoBehaviour {
     float fadeTimer3 = 1.0f;
     float tipTimer = 0.1f;
     float fadeTimer4 = 1.0f;
+    float doubleTapTime = .5f;
+    private float doubleTapTimer;
+    private bool firstTap = false;
 
     ArrayList starArray = new ArrayList();
     public GameObject stars1 = null;
@@ -29,16 +32,34 @@ public class Splash : MonoBehaviour {
         starArray.Add(stars4);
         starArray.Add(stars5);
 
+        doubleTapTimer = doubleTapTime;
+
         fedora.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
         logo.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButtonDown(0))
+        //Double tap to skip splash sequence.
+        if (firstTap)
         {
-            Application.LoadLevel("Title");
+            doubleTapTimer -= Time.deltaTime;
+            if (doubleTapTimer <= 0)
+            {
+                firstTap = false;
+            }
+            if (Input.GetMouseButtonDown(0))
+            {
+                Application.LoadLevel("Title");
+            }
         }
+
+        if (Input.GetMouseButtonDown(0) && firstTap == false)
+        {
+            firstTap = true;
+            doubleTapTimer = doubleTapTime;
+        }
+
         if (waitTimer >= 0.0f)
         {
             waitTimer -= Time.deltaTime;
