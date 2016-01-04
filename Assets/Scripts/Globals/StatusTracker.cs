@@ -44,6 +44,18 @@ public class StatusTracker : MonoBehaviour
 
     public Sprite platform;
     public Sprite[] shipProgress;
+    private int lastLevelInt;
+    private int thisLevel;
+
+
+    public int LastLevelInt
+    {
+        get { return lastLevelInt; }
+    }
+    public int ThisLevel
+    {
+        get { return thisLevel; }
+    }
 
     // Use this for initialization
     void Start()
@@ -186,6 +198,8 @@ public class StatusTracker : MonoBehaviour
 
     void OnLevelWasLoaded(int level) //Called whenever a new scene loads
     {
+        lastLevelInt = thisLevel;
+        thisLevel = level;
         TargetSkyBox();
         UpdateShipSprite();
     }

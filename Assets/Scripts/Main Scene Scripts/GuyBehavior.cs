@@ -26,6 +26,52 @@ public class GuyBehavior : MonoBehaviour
         facingRight = true;
         WalkingToPosition = false;
         behaviorTimer = Random.Range(1.0f, 5.0f);
+
+        //This if statement and its contents control the guy reentering specific scenes at appropriate locations
+        //For example, he will be standing in front of the shop he just left when returning to the street scene.
+        if(GameObject.Find("StatusTracker"))
+        {
+            StatusTracker status = StatusTracker.Instance;
+            Vector3 transform = gameObject.transform.position;
+            switch(status.ThisLevel)
+            {
+                case 3: //Street
+                    switch (status.LastLevelInt)
+                    {
+                        case 5: //Paint Shop
+                            transform.x = -4.47f;
+                            transform.y = 0.272f;
+                            break;
+                        case 6: //Hardware Shop
+                            transform.x = 4.22f;
+                            transform.y = 0.272f;
+                            break;
+                        default: //Yard and anywhere else (shouldnt happen)
+                            transform.x = 0.182f;
+                            transform.y = 0.272f;
+                            break;
+                    }
+                    break;
+
+                case 10: //Yard
+                    switch (status.LastLevelInt)
+                    {
+                        case 3: //Street
+                            transform.x = 10.56f;
+                            transform.y = -2.93f;
+                            break;
+
+                        default: //Workshop and anywhere else (shouldnt happen)
+                            transform.x = 1.77f;
+                            transform.y = -2.93f;
+                            break;
+                    }
+                    break;
+
+                default: break;
+            }
+            gameObject.transform.position = transform;
+        }
     }
 
     // Update is called once per frame
