@@ -68,10 +68,12 @@
      <Compile Include="Assets\Scripts\Fueling\FuelCanister.cs" />
      <Compile Include="Assets\Scripts\Fueling\FuelScript.cs" />
      <Compile Include="Assets\Scripts\Fueling\FuelTankScript.cs" />
+     <Compile Include="Assets\Scripts\Globals\Audio\AmbienceSingleton.cs" />
+     <Compile Include="Assets\Scripts\Globals\Audio\FXHandler.cs" />
+     <Compile Include="Assets\Scripts\Globals\Audio\MusicSingleton.cs" />
      <Compile Include="Assets\Scripts\Globals\CameraScale.cs" />
      <Compile Include="Assets\Scripts\Globals\CloudGenerator.cs" />
      <Compile Include="Assets\Scripts\Globals\CloudScript.cs" />
-     <Compile Include="Assets\Scripts\Globals\MusicSingleton.cs" />
      <Compile Include="Assets\Scripts\Globals\ObjectBounding.cs" />
      <Compile Include="Assets\Scripts\Globals\ScreenFade.cs" />
      <Compile Include="Assets\Scripts\Globals\StatusTracker.cs" />
