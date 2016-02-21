@@ -18,14 +18,20 @@ public class MaterialScript : MonoBehaviour
         fading = false;
         tag = "CraftingMat";
 
-		if (!GameObject.Find ("StatusTracker").GetComponent<StatusTracker> ().itemsNeeded.Contains (name)) {
-			Destroy(gameObject);
-		}
+        try
+        {
+            if (!GameObject.Find("StatusTracker").GetComponent<StatusTracker>().itemsNeeded.Contains(name))
+            {
+                Destroy(gameObject);
+            }
 
-		if (!GameObject.Find ("StatusTracker").GetComponent<StatusTracker> ().discoveredItems.Contains (name) &&
-		    Application.loadedLevelName == "Workshop") {
-			Destroy(gameObject);
-		}
+            if (!GameObject.Find("StatusTracker").GetComponent<StatusTracker>().discoveredItems.Contains(name) &&
+                Application.loadedLevelName == "Workshop")
+            {
+                Destroy(gameObject);
+            }
+        }
+        catch { }
     }
 
     // Update is called once per frame
@@ -68,15 +74,23 @@ public class MaterialScript : MonoBehaviour
 
     void OnMouseOver()
     {
-		if (Application.loadedLevelName == "Workshop") {
-			if (Input.GetMouseButtonDown (0) && !guy.GetComponent<GuyBehavior> ().WalkingToPosition) {
-				guy.GetComponent<GuyBehavior> ().MakeWalkToPosition (transform.position);
-				detectingPickup = true;
-			}
-		} else if (Input.GetMouseButton(0)) {
-			GameObject.Find ("StatusTracker").GetComponent<StatusTracker> ().discoveredItems.Add(name);
-			fading = true;
-		}
+        try
+        {
+            if (Application.loadedLevelName == "Workshop")
+            {
+                if (Input.GetMouseButtonDown(0) && !guy.GetComponent<GuyBehavior>().WalkingToPosition)
+                {
+                    guy.GetComponent<GuyBehavior>().MakeWalkToPosition(transform.position);
+                    detectingPickup = true;
+                }
+            }
+            else if (Input.GetMouseButton(0))
+            {
+                GameObject.Find("StatusTracker").GetComponent<StatusTracker>().discoveredItems.Add(name);
+                fading = true;
+            }
+        }
+        catch { }
     }
 
     void DetectPickup()

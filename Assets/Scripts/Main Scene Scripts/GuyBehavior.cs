@@ -7,6 +7,7 @@ public class GuyBehavior : MonoBehaviour
     public float leftBound;
     public float rightBound;
     public float walkSpeed;
+    private float defaultWalkSpeed;
     public bool isWalking;
     public bool facingRight;
 
@@ -26,6 +27,7 @@ public class GuyBehavior : MonoBehaviour
         facingRight = true;
         WalkingToPosition = false;
         behaviorTimer = Random.Range(1.0f, 5.0f);
+        defaultWalkSpeed = walkSpeed;
 
         //This if statement and its contents control the guy reentering specific scenes at appropriate locations
         //For example, he will be standing in front of the shop he just left when returning to the street scene.
@@ -88,6 +90,7 @@ public class GuyBehavior : MonoBehaviour
             if (Mathf.Abs(targetPosition.x - transform.position.x) < .05f)
             {
                 WalkingToPosition = false;
+                walkSpeed = defaultWalkSpeed;
                 
             }
         }
@@ -106,6 +109,10 @@ public class GuyBehavior : MonoBehaviour
     //Handles moving the guy to target position
     private void WalkToPosition()
     {
+        if (Mathf.Abs(transform.position.x - targetPosition.x) > gameObject.transform.localScale.x * 10.0f)
+        {
+            walkSpeed = defaultWalkSpeed * 1.5f;
+        }
         if (Mathf.Abs(transform.position.x - targetPosition.x) > .02f)
         {
             isWalking = true;
