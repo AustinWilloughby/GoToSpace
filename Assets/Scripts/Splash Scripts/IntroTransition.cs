@@ -5,6 +5,7 @@ public class IntroTransition : MonoBehaviour
 {
     private SpriteRenderer screenBlack;
     public float timeScale = 1;
+    public bool madeIt = false;
 
     // Use this for initialization
     void Start()
@@ -25,7 +26,7 @@ public class IntroTransition : MonoBehaviour
             screenBlack.color = newColor;
         }
         Vector3 temp = transform.position;
-        if (transform.position.y > 4.6f)
+        if (transform.position.y > 4.6f && madeIt == false)
         {
             temp.y -= .04f * timeScale;
             transform.position = temp;
@@ -33,6 +34,10 @@ public class IntroTransition : MonoBehaviour
             {
                 transform.position = new Vector3(transform.position.x, 4.6f, transform.position.z);
             }
+        }
+        else
+        {
+            madeIt = true;
         }
     }
 }

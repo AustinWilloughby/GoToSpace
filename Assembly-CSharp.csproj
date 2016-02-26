@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\BlastOff\LaunchParticle.cs" />
      <Compile Include="Assets\Scripts\BlastOff\LaunchScript.cs" />
      <Compile Include="Assets\Scripts\BlastOff\RocketThruster.cs" />
+     <Compile Include="Assets\Scripts\CreditHandler.cs" />
      <Compile Include="Assets\Scripts\Drill\Drill.cs" />
      <Compile Include="Assets\Scripts\Drill\Screw.cs" />
      <Compile Include="Assets\Scripts\Fueling\FuelCanister.cs" />
