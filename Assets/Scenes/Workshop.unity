@@ -317,6 +317,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd95a68fa2b21f54ca96077a9f820692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupNoise: {fileID: 0}
+  properName: saw
+  dropOffText: 
 --- !u!212 &37028753
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -388,6 +391,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd95a68fa2b21f54ca96077a9f820692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupNoise: {fileID: 0}
+  properName: nails
+  dropOffText: 
 --- !u!212 &57588841
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -487,6 +493,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd95a68fa2b21f54ca96077a9f820692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupNoise: {fileID: 0}
+  properName: fuel
+  dropOffText: 
 --- !u!212 &130865836
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -572,6 +581,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd95a68fa2b21f54ca96077a9f820692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupNoise: {fileID: 0}
+  properName: welding torch
+  dropOffText: 
 --- !u!212 &350291055
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -998,6 +1010,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd95a68fa2b21f54ca96077a9f820692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupNoise: {fileID: 0}
+  properName: window
+  dropOffText: 
 --- !u!212 &891973890
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1069,6 +1084,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd95a68fa2b21f54ca96077a9f820692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupNoise: {fileID: 0}
+  properName: hammer
+  dropOffText: 
 --- !u!61 &897631929
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1156,6 +1174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd95a68fa2b21f54ca96077a9f820692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupNoise: {fileID: 0}
+  properName: car seat
+  dropOffText: 
 --- !u!212 &983653044
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1329,6 +1350,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd95a68fa2b21f54ca96077a9f820692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupNoise: {fileID: 0}
+  properName: bolt
+  dropOffText: 
 --- !u!212 &1129278738
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1757,6 +1781,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd95a68fa2b21f54ca96077a9f820692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupNoise: {fileID: 0}
+  properName: metal rod
+  dropOffText: We also need a welding torch, but I don't have one. Maybe we can buy
+    one?
 --- !u!212 &1590750761
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1842,6 +1870,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd95a68fa2b21f54ca96077a9f820692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupNoise: {fileID: 0}
+  properName: sheet metal
+  dropOffText: 
 --- !u!212 &1597942364
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1927,6 +1958,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd95a68fa2b21f54ca96077a9f820692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupNoise: {fileID: 0}
+  properName: paint roller
+  dropOffText: 
 --- !u!212 &1636407144
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2111,6 +2145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd95a68fa2b21f54ca96077a9f820692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupNoise: {fileID: 0}
+  properName: screw
+  dropOffText: 
 --- !u!212 &1849706636
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2196,6 +2233,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd95a68fa2b21f54ca96077a9f820692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupNoise: {fileID: 0}
+  properName: monkey wrench
+  dropOffText: 
 --- !u!212 &1938539272
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2325,6 +2365,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd95a68fa2b21f54ca96077a9f820692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupNoise: {fileID: 0}
+  properName: wood
+  dropOffText: 
 --- !u!61 &2042759518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2412,6 +2455,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd95a68fa2b21f54ca96077a9f820692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupNoise: {fileID: 0}
+  properName: paint
+  dropOffText: 
 --- !u!212 &2099070961
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2509,6 +2555,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd95a68fa2b21f54ca96077a9f820692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupNoise: {fileID: 0}
+  properName: drill
+  dropOffText: 
 --- !u!212 &2110009802
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -108,6 +108,7 @@
      <Compile Include="Assets\Scripts\Welding\Torch.cs" />
      <Compile Include="Assets\Scripts\Welding\WeldProgress.cs" />
      <Compile Include="Assets\Scripts\Welding\WeldTarget.cs" />
+     <Compile Include="Assets\Scripts\WorldItemScript.cs" />
      <None Include="Assets\Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\ProjectSettings\ProjectVersion.txt" />
  <Reference Include="UnityEngine.UI">

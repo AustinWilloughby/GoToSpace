@@ -8,6 +8,9 @@ public class MaterialScript : MonoBehaviour
     private bool held;
     private Vector4 color;
     private GameObject guy;
+    public AudioClip pickupNoise;
+    public string properName;
+    public string dropOffText;
 
     //private int neededProg;
     //private int currentProg;
@@ -22,11 +25,10 @@ public class MaterialScript : MonoBehaviour
         {
             if (!GameObject.Find("StatusTracker").GetComponent<StatusTracker>().itemsNeeded.Contains(name))
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
 
-            if (!GameObject.Find("StatusTracker").GetComponent<StatusTracker>().discoveredItems.Contains(name) &&
-                Application.loadedLevelName == "Workshop")
+            if (!GameObject.Find("StatusTracker").GetComponent<StatusTracker>().discoveredItems.Contains(name) && Application.loadedLevelName == "Workshop")
             {
                 Destroy(gameObject);
             }
@@ -43,6 +45,7 @@ public class MaterialScript : MonoBehaviour
             GetComponent<SpriteRenderer>().color = color;
             if (color.w <= 0)
             {
+                GameObject.Find("StatusTracker").GetComponent<StatusTracker>().discoveredItems.Add(name);
                 GameObject.Destroy(this);
             }
         }
@@ -56,9 +59,13 @@ public class MaterialScript : MonoBehaviour
 
             if (Mathf.Abs(transform.position.x - GameObject.Find("Workbench").transform.position.x) < .01f)
             {
+                if (dropOffText.Length > 0)
+                {
+                    GameObject.Find("SpeechBubble").GetComponent<SpeechBubble>().GuySays(dropOffText);
+                }
                 held = false;
                 transform.position = GameObject.Find("Workbench").transform.position;
-                transform.position = transform.position + new Vector3(0, 0, -2.5f);
+                transform.position = transform.position + new Vector3(0, 0, 0.5f);
             }
         }
     }
@@ -78,16 +85,51 @@ public class MaterialScript : MonoBehaviour
         {
             if (Application.loadedLevelName == "Workshop")
             {
-                if (Input.GetMouseButtonDown(0) && !guy.GetComponent<GuyBehavior>().WalkingToPosition)
+                if (GameObject.Find("StatusTracker").GetComponent<StatusTracker>().itemsNeeded.Contains(name))
                 {
-                    guy.GetComponent<GuyBehavior>().MakeWalkToPosition(transform.position);
-                    detectingPickup = true;
+                    if (Input.GetMouseButtonDown(0) && !guy.GetComponent<GuyBehavior>().WalkingToPosition)
+                    {
+                        guy.GetComponent<GuyBehavior>().MakeWalkToPosition(transform.position);
+                        detectingPickup = true;
+                    }
+                }
+                else
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        if (properName != null)
+                        {
+                            string text = "I don't need that\n" + properName.ToLower();
+
+                            if(properName.Length > 10 && properName.Length <= 12) { text += " right \nnow!"; }
+                            else if(properName.Length > 12) { text += "\nright now!"; }
+                            else { text += " right now!"; }
+                            GameObject.Find("SpeechBubble").GetComponent<SpeechBubble>().GuySays(text);
+                        }
+                        else
+                        {
+                            GameObject.Find("SpeechBubble").GetComponent<SpeechBubble>().GuySays("I don't need that\n" + name.ToLower() + " right now!");
+                        }
+                    }
                 }
             }
             else if (Input.GetMouseButton(0))
             {
-                GameObject.Find("StatusTracker").GetComponent<StatusTracker>().discoveredItems.Add(name);
-                fading = true;
+                if (GameObject.Find("StatusTracker").GetComponent<StatusTracker>().itemsNeeded.Contains(name))
+                {
+                    fading = true;
+                    if (pickupNoise != null)
+                    {
+                        AudioSource source = gameObject.GetComponent<AudioSource>();
+                        source.volume = GameObject.Find("MusicHandler").GetComponent<MusicSingleton>().volume;
+                        source.clip = pickupNoise;
+                        source.Play();
+                    }
+                }
+                else
+                {
+
+                }
             }
         }
         catch { }

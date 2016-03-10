@@ -85,7 +85,7 @@ public class AmbienceSingleton : MonoBehaviour
 
             case 12: //InsideShip
                 lowPass.enabled = false;
-                source.volume = .3f;
+                source.volume = .1f;
                 break;
 
             default:

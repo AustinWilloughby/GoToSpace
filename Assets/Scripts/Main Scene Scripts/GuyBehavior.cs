@@ -158,6 +158,12 @@ public class GuyBehavior : MonoBehaviour
         }
     }
 
+    public void StandStill(float time)
+    {
+        behaviorTimer = time;
+        isWalking = false;
+    }
+
     //Random walking when not targeted walking
     private void RandomWalking()
     {
