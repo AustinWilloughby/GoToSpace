@@ -168,15 +168,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 434742130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 607cbab1481bdb0439b98c2d4f7a58eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 372165a17aab8d24fa6bf6f681d0243d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 609559669}
-  growing: 0
-  shrinking: 0
-  done: 0
-  target: {fileID: 1012522338}
-  waiting: 0
+  text: {fileID: 609559671}
 --- !u!212 &434742132
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -214,8 +209,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 434742130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.95, y: -1.31, z: -2.158102}
-  m_LocalScale: {x: 0.61759657, y: 0.70251554, z: 0.6175961}
+  m_LocalPosition: {x: 1.07, y: -1.23, z: -2.158102}
+  m_LocalScale: {x: -0.6561964, y: 0.70251554, z: 0.6175961}
   m_Children:
   - {fileID: 609559672}
   m_Father: {fileID: 0}
@@ -244,7 +239,13 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 609559669}
-  m_Text: Hello World
+  m_Text: 'Welcome to my
+
+    happy little shop!
+
+    Please look around,
+
+    and God bless!'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -264,7 +265,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 609559669}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -291,8 +292,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 609559669}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.57, y: 1.72, z: -3.249}
-  m_LocalScale: {x: 0.19871108, y: 0.16890447, z: 0.19871102}
+  m_LocalPosition: {x: 2.4701, y: 1.72, z: -3.2490003}
+  m_LocalScale: {x: -0.19125943, y: 0.16890447, z: 0.19871102}
   m_Children: []
   m_Father: {fileID: 434742133}
   m_RootOrder: 0

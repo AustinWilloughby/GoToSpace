@@ -175,6 +175,7 @@ MonoBehaviour:
   ambience:
   - {fileID: 8300000, guid: 3d39eebee68fe0a43a2a6bde0b3d6c63, type: 3}
   - {fileID: 8300000, guid: ed70cf63dadb1e44d886ae25389651c4, type: 3}
+  volume: 1
 --- !u!169 &586588369
 AudioLowPassFilter:
   m_ObjectHideFlags: 0

@@ -20,11 +20,6 @@ public class BobScript : MonoBehaviour
         FaceGuy();
         //RandomFlip();
         HandleFlipping();
-        if(!sayHello)
-        {
-            sayHello = true;
-            GameObject.Find("SpeechBubble").GetComponent<SpeechBubble>().GuySays("Welcome to my happy little shop!");
-        }
     }
 
     private void HandleFlipping()

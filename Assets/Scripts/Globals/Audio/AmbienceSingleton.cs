@@ -35,6 +35,7 @@ public class AmbienceSingleton : MonoBehaviour
     #endregion
 
     public AudioClip[] ambience;
+    public float volume;
     private AudioLowPassFilter lowPass;
     private AudioSource source;
     private int currentIndex;
@@ -80,17 +81,17 @@ public class AmbienceSingleton : MonoBehaviour
             case 5: //PaintShop
             case 6: //HardwareShop
                 lowPass.enabled = true;
-                source.volume = .7f;
+                source.volume = 1f * volume;
                 break;
 
             case 12: //InsideShip
                 lowPass.enabled = false;
-                source.volume = .1f;
+                source.volume = .2f * volume;
                 break;
 
             default:
                 lowPass.enabled = false;
-                source.volume = .6f;
+                source.volume = .8f * volume;
                 break;
         }
 

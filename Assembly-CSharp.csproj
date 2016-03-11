@@ -63,7 +63,7 @@
      <Compile Include="Assets\Scripts\BlastOff\LaunchParticle.cs" />
      <Compile Include="Assets\Scripts\BlastOff\LaunchScript.cs" />
      <Compile Include="Assets\Scripts\BlastOff\RocketThruster.cs" />
-     <Compile Include="Assets\Scripts\CreditHandler.cs" />
+     <Compile Include="Assets\Scripts\BobTalk.cs" />
      <Compile Include="Assets\Scripts\Drill\Drill.cs" />
      <Compile Include="Assets\Scripts\Drill\Screw.cs" />
      <Compile Include="Assets\Scripts\Fueling\FuelCanister.cs" />
@@ -79,7 +79,6 @@
      <Compile Include="Assets\Scripts\Globals\ScreenFade.cs" />
      <Compile Include="Assets\Scripts\Globals\StatusTracker.cs" />
      <Compile Include="Assets\Scripts\GuyMinigameScript.cs" />
-     <Compile Include="Assets\Scripts\Highlight.cs" />
      <Compile Include="Assets\Scripts\InsideShip\ComputerLight.cs" />
      <Compile Include="Assets\Scripts\InsideShip\PlanetGenerator.cs" />
      <Compile Include="Assets\Scripts\InsideShip\PlanetScript.cs" />
@@ -104,6 +103,11 @@
      <Compile Include="Assets\Scripts\Street\BobScript.cs" />
      <Compile Include="Assets\Scripts\Street\Fountain.cs" />
      <Compile Include="Assets\Scripts\Street\WaterParticleScript.cs" />
+     <Compile Include="Assets\Scripts\Title\CreditHandler.cs" />
+     <Compile Include="Assets\Scripts\Title\Highlight.cs" />
+     <Compile Include="Assets\Scripts\Title\MenuButton.cs" />
+     <Compile Include="Assets\Scripts\Title\OptionsHandler.cs" />
+     <Compile Include="Assets\Scripts\Title\sliderScript.cs" />
      <Compile Include="Assets\Scripts\Welding\Spark.cs" />
      <Compile Include="Assets\Scripts\Welding\Torch.cs" />
      <Compile Include="Assets\Scripts\Welding\WeldProgress.cs" />

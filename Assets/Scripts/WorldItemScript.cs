@@ -53,7 +53,7 @@ public class WorldItemScript : MonoBehaviour
 
             if (Application.loadedLevelName != "Yard")
             {
-                if (Mathf.Abs(transform.position.x - GameObject.Find("register").transform.position.x) < .01f)
+                if (Mathf.Abs(transform.position.x - GameObject.Find("register").transform.position.x) < .3f)
                 {
                     held = false;
                     transform.position = GameObject.Find("register").transform.position;

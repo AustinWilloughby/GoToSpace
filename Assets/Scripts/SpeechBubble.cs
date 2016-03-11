@@ -9,7 +9,7 @@ public class SpeechBubble : MonoBehaviour
     public bool growing;
     public bool shrinking;
     public bool done;
-    public GameObject target;
+    GameObject guy;
     public float waiting;
     private bool requiredSpeech;
     private bool talking;
@@ -29,6 +29,8 @@ public class SpeechBubble : MonoBehaviour
         waiting = 3.0f;
         shrinkNOW = false;
         requiredSpeech = false;
+        guy = GameObject.Find("Guy");
+    
     }
 
     // Update is called once per frame
@@ -45,10 +47,8 @@ public class SpeechBubble : MonoBehaviour
             talking = false;
         }
 
-        transform.position = target.transform.position + new Vector3(1.9f, 1.9f, 0);
+        transform.position = guy.transform.position + new Vector3(1.9f, 1.9f, 0);
 
-        if (target.name == "Guy")
-        {
             // No Craftables on screen and there is still stuff left to craft
             if ((GameObject.FindGameObjectsWithTag("CraftingMat").GetLength(0) == 0 && GameObject.Find("StatusTracker").GetComponent<StatusTracker>().itemsNeeded.Count > 0) && !done)
             {
@@ -77,7 +77,6 @@ public class SpeechBubble : MonoBehaviour
             {
                 growing = true;
             }
-        }
 
         if (temp.y >= .6f)
         {
