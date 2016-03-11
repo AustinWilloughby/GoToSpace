@@ -12,6 +12,8 @@ public class NailScript : MonoBehaviour {
     public Sprite sp3;
     public Sprite sp4;
 	public Sprite bent;
+    private AudioSource source;
+    public AudioClip[] clips;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +22,12 @@ public class NailScript : MonoBehaviour {
         misses = 0;
         darkness = 1.0f;
         GetComponent<SpriteRenderer>().color = new Color(darkness, darkness, darkness, 1.0f);
+        source = gameObject.GetComponent<AudioSource>();
+        try
+        {
+            source.volume = GameObject.Find("AmbientSounds").GetComponent<AmbienceSingleton>().volume;
+        }
+        catch { }
 	}
 	
 	// Update is called once per frame
@@ -31,22 +39,28 @@ public class NailScript : MonoBehaviour {
                 case 0:
                     GetComponent<SpriteRenderer>().sprite = sp1;
                     hitbox.transform.position -= Vector3.up * 0.13f;
+                    source.clip = clips[0];
                     break;
                 case 1:
                     GetComponent<SpriteRenderer>().sprite = sp2;
                     hitbox.transform.position -= Vector3.up * 0.16f;
+                    source.clip = clips[0];
                     break;
                 case 2:
                     GetComponent<SpriteRenderer>().sprite = sp3;
                     hitbox.transform.position -= Vector3.up * 0.15f;
+                    source.clip = clips[0];
                     break;
                 case 3:
                     GetComponent<SpriteRenderer>().sprite = sp4;
+                    source.clip = clips[1];
                     break;
                 default:
+                    source.clip = clips[2];
                     break;
             }
             hits++;
+            source.Play();
         }
 
         else if (Input.GetMouseButtonDown(0) && GetComponent<ItemScript>().mousedOver && misses <= 2)
@@ -54,11 +68,15 @@ public class NailScript : MonoBehaviour {
             misses++;
             darkness -= .1f;
             GetComponent<SpriteRenderer>().color = new Color(darkness, darkness, darkness, 1.0f);
+            source.clip = clips[2];
+            source.Play();
         }
 
 		if (misses > 2) {
 			darkness = 1.0f;
 			GetComponent<SpriteRenderer>().sprite = bent;
+            source.clip = clips[2];
+            source.Play();
 		}
 	}
 }

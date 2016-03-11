@@ -5,10 +5,17 @@ public class Torch : MonoBehaviour {
 
     float sparkTimer = 0.1f;
     public GameObject spark;
+    private AudioSource source;
 
 	// Use this for initialization
 	void Start () {
-	
+        source = gameObject.GetComponent<AudioSource>();
+        try
+        {
+            source.volume = GameObject.Find("AmbientSounds").GetComponent<AmbienceSingleton>().volume;
+        }
+        catch { }
+        source.loop = true;
 	}
 	
 	// Update is called once per frame
@@ -19,7 +26,15 @@ public class Torch : MonoBehaviour {
 
         if (Input.GetMouseButton(0))
         {
-            GenerateSparks();    
+            GenerateSparks();
+            if (!source.isPlaying)
+            {
+                source.Play();
+            }
+        }
+        else
+        {
+            source.Stop();
         }
 	}
 

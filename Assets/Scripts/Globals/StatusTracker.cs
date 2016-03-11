@@ -47,6 +47,8 @@ public class StatusTracker : MonoBehaviour
     private int lastLevelInt;
     private int thisLevel;
 
+    private AudioSource source;
+    public AudioClip[] construction;
 
     public int LastLevelInt
     {
@@ -108,6 +110,13 @@ public class StatusTracker : MonoBehaviour
 		itemsNeeded.Add ("Nails");
 		itemsNeeded.Add ("Wood");
 		itemsNeeded.Add ("Hammer");
+
+        source = gameObject.GetComponent<AudioSource>();
+        try
+        {
+            source.volume = GameObject.Find("AmbientSounds").GetComponent<AmbienceSingleton>().volume;
+        }
+        catch { }
     }
 
     // Update is called once per frame
@@ -120,6 +129,8 @@ public class StatusTracker : MonoBehaviour
     public void AdvanceStage()
     {
         currentStage = (CurrentlyBuilding)((int)currentStage + 1);
+        source.clip = construction[Random.Range(0, construction.Length - 1)];
+        source.Play();
         currentSkyColorIndex++;
 
 		itemsNeeded.Clear ();

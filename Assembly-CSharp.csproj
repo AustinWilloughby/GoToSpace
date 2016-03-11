@@ -96,6 +96,7 @@
      <Compile Include="Assets\Scripts\PlayerPrefsTest.cs" />
      <Compile Include="Assets\Scripts\Sawing\Saw.cs" />
      <Compile Include="Assets\Scripts\Sawing\SawPoint.cs" />
+     <Compile Include="Assets\Scripts\ScoreAudio.cs" />
      <Compile Include="Assets\Scripts\SpeechBubble.cs" />
      <Compile Include="Assets\Scripts\Splash Scripts\IntroTransition.cs" />
      <Compile Include="Assets\Scripts\Splash Scripts\Splash.cs" />

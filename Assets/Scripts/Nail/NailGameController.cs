@@ -76,11 +76,11 @@ public class NailGameController : MonoBehaviour {
                 grade = "S";
                 break;
             case 1:
-                grade = "A";
+                grade = "A";;
                 break;
             case 2:
             case 3:
-                grade = "B";
+                grade = "B";;
                 break;
             case 4:
             case 5:
@@ -100,6 +100,7 @@ public class NailGameController : MonoBehaviour {
     {
         GameObject.Find("ScreenBlack").GetComponent<ScreenFade>().fadeOut = true;
         textMesh.text = "End Stage!\n\nHits: " + hits + "\nMisses: " + misses + "\n\nGrade: " + grade;
+        GameObject.Find("ScoreAudio").GetComponent<ScoreAudio>().PlayTune(grade);
     }
 
     private void Advance()
