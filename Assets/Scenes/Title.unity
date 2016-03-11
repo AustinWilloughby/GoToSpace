@@ -910,8 +910,25 @@ MonoBehaviour:
   pauseTimer: 0
   distance: 0
   slideTimer: 0
-  clouds:
-  - {fileID: 72051029}
+  cloudRenders:
+  - {fileID: 811375012}
+  - {fileID: 1105875097}
+  - {fileID: 350225486}
+  - {fileID: 912488130}
+  - {fileID: 2043450349}
+  - {fileID: 1116878538}
+  - {fileID: 1102589585}
+  - {fileID: 99948374}
+  - {fileID: 869317764}
+  - {fileID: 1266663894}
+  - {fileID: 174880027}
+  - {fileID: 1966539660}
+  - {fileID: 1437493878}
+  - {fileID: 2118886055}
+  - {fileID: 1691766362}
+  - {fileID: 404601822}
+  - {fileID: 165928538}
+  - {fileID: 193943457}
   credits: {fileID: 1495741532}
 --- !u!61 &853206562
 BoxCollider2D:

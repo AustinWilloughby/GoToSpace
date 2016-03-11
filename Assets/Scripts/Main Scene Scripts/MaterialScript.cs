@@ -99,16 +99,12 @@ public class MaterialScript : MonoBehaviour
                     {
                         if (properName != null)
                         {
-                            string text = "I don't need that\n" + properName.ToLower();
-
-                            if(properName.Length > 10 && properName.Length <= 12) { text += " right \nnow!"; }
-                            else if(properName.Length > 12) { text += "\nright now!"; }
-                            else { text += " right now!"; }
+                            string text = "I don't need that " + properName.ToLower() + " right now!";
                             GameObject.Find("SpeechBubble").GetComponent<SpeechBubble>().GuySays(text);
                         }
                         else
                         {
-                            GameObject.Find("SpeechBubble").GetComponent<SpeechBubble>().GuySays("I don't need that\n" + name.ToLower() + " right now!");
+                            GameObject.Find("SpeechBubble").GetComponent<SpeechBubble>().GuySays("I don't need that" + name.ToLower() + " right now!");
                         }
                     }
                 }

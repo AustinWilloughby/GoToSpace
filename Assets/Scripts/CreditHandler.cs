@@ -6,7 +6,7 @@ public class CreditHandler : MonoBehaviour
     public float pauseTimer;
     public float distance;
     public float slideTimer;
-    public CloudGenerator[] clouds;
+    public SpriteRenderer[] cloudRenders;
     public GameObject credits;
 
     private bool runSequence;
@@ -33,10 +33,6 @@ public class CreditHandler : MonoBehaviour
             switch (sequenceSection)
             {
                 case 0:
-                    for (int i = 0; i < clouds.Length; i++)
-                    {
-                        //clouds[i].enabled = false;
-                    }
                     sequenceSection++;
                     break;
 
@@ -54,20 +50,30 @@ public class CreditHandler : MonoBehaviour
                     credPos = credits.transform.position;
                     credPos.x += Time.deltaTime * 3;
                     credits.transform.position = credPos;
-                    if(credPos.x > 150.0f)
+                    if (credPos.x > 150.0f)
                     {
                         sequenceSection++;
                     }
                     break;
 
                 case 3:
-                    camPos  = cam.gameObject.transform.position;
+                    camPos = cam.gameObject.transform.position;
                     camPos.y -= Time.deltaTime * 3.5f;
-                    cam.gameObject.transform.position = camPos ;
-                                        
+                    cam.gameObject.transform.position = camPos;
+
                     credPos = credits.transform.position;
                     credPos.x += Time.deltaTime * 3;
                     credits.transform.position = credPos;
+
+                    if (camPos.y < 7.0)
+                    {
+                        Color alphaChange = cloudRenders[0].color;
+                        alphaChange.a -= Time.deltaTime * 2;
+                        for (int i = 0; i < cloudRenders.Length; i++)
+                        {
+                            cloudRenders[i].color = alphaChange;
+                        }
+                    }
 
                     if (camPos.y < 4.62)
                     {
@@ -82,6 +88,13 @@ public class CreditHandler : MonoBehaviour
                     credPos = credits.transform.position;
                     credPos.x = -26.6f;
                     credits.transform.position = credPos;
+
+                    Color alpha = cloudRenders[0].color;
+                    alpha.a = 1;
+                    for (int i = 0; i < cloudRenders.Length; i++)
+                    {
+                        cloudRenders[i].color = alpha;
+                    }
                     break;
             }
 

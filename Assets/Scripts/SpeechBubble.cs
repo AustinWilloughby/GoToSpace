@@ -9,7 +9,7 @@ public class SpeechBubble : MonoBehaviour
     public bool growing;
     public bool shrinking;
     public bool done;
-    GameObject guy;
+    public GameObject target;
     public float waiting;
     private bool requiredSpeech;
     private bool talking;
@@ -20,7 +20,6 @@ public class SpeechBubble : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        guy = GameObject.Find("Guy");
         growing = false;
         shrinking = false;
         text.GetComponent<TextMesh>().text = "";
@@ -35,7 +34,7 @@ public class SpeechBubble : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (waiting > 0.0f && temp.y >= .5f)
+        if (waiting > 0.0f && temp.y >= .6f)
         {
             waiting -= Time.deltaTime;
         }
@@ -46,38 +45,41 @@ public class SpeechBubble : MonoBehaviour
             talking = false;
         }
 
-        transform.position = guy.transform.position + new Vector3(1.9f, 1.9f, 0);
+        transform.position = target.transform.position + new Vector3(1.9f, 1.9f, 0);
 
-        // No Craftables on screen and there is still stuff left to craft
-        if ((GameObject.FindGameObjectsWithTag("CraftingMat").GetLength(0) == 0 && GameObject.Find("StatusTracker").GetComponent<StatusTracker>().itemsNeeded.Count > 0) && !done)
+        if (target.name == "Guy")
         {
-            growing = true;
+            // No Craftables on screen and there is still stuff left to craft
+            if ((GameObject.FindGameObjectsWithTag("CraftingMat").GetLength(0) == 0 && GameObject.Find("StatusTracker").GetComponent<StatusTracker>().itemsNeeded.Count > 0) && !done)
+            {
+                growing = true;
+            }
+
+            // Special case for the first stage
+            if (GameObject.Find("StatusTracker").GetComponent<StatusTracker>().currentStage == CurrentlyBuilding.Platform && !done)
+            {
+                growing = true;
+            }
+
+            if (GameObject.Find("StatusTracker").GetComponent<StatusTracker>().currentStage == CurrentlyBuilding.Skeleton && !done)
+            {
+                growing = true;
+            }
+
+            // Special case for the last stage
+            if (GameObject.Find("StatusTracker").GetComponent<StatusTracker>().currentStage == CurrentlyBuilding.ToSpace && !done)
+            {
+                growing = true;
+            }
+
+            // Special case for stages with no minigame
+            if (GameObject.Find("Main Camera").transform.GetChild(0).GetComponent<ScreenFade>().shouldAdvanceStage && !done)
+            {
+                growing = true;
+            }
         }
 
-        // Special case for the first stage
-        if (GameObject.Find("StatusTracker").GetComponent<StatusTracker>().currentStage == CurrentlyBuilding.Platform && !done)
-        {
-            growing = true;
-        }
-
-        if (GameObject.Find("StatusTracker").GetComponent<StatusTracker>().currentStage == CurrentlyBuilding.Skeleton && !done)
-        {
-            growing = true;
-        }
-
-        // Special case for the last stage
-        if (GameObject.Find("StatusTracker").GetComponent<StatusTracker>().currentStage == CurrentlyBuilding.ToSpace && !done)
-        {
-            growing = true;
-        }
-
-        // Special case for stages with no minigame
-        if (GameObject.Find("Main Camera").transform.GetChild(0).GetComponent<ScreenFade>().shouldAdvanceStage && !done)
-        {
-            growing = true;
-        }
-
-        if (temp.y >= .5f)
+        if (temp.y >= .6f)
         {
             growing = false;
             if (!talking)
@@ -155,9 +157,43 @@ public class SpeechBubble : MonoBehaviour
         {
             if (!requiredSpeech && !growing && !shrinking && waiting <= 0.0f)
             {
-                text.GetComponent<TextMesh>().text = speech;
+                string formatted = "";
+                string[] split = speech.Split(' ');
+                int currentLength = 0;
+                for (int i = 0; i < split.Length; i++)
+                {
+                    //Punctuation adds almost no length so we ignore it if we have to
+                    if (!split[i].Contains("'") || !split[i].Contains(".") || !split[i].Contains(",") || !split[i].Contains("!")) 
+                    {
+                        if (currentLength + split[i].Length >= 18)
+                        {
+                            currentLength = split[i].Length + 1;
+                            formatted += "\n" + split[i] + " ";
+                        }
+                        else
+                        {
+                            currentLength += split[i].Length + 1;
+                            formatted += split[i] + " ";
+                        }
+                    }
+                    else
+                    {
+                        if (currentLength + split[i].Length >= 19)
+                        {
+                            currentLength = split[i].Length;
+                            formatted += "\n" + split[i] + " ";
+                        }
+                        else
+                        {
+                            currentLength += split[i].Length;
+                            formatted += split[i] + " ";
+                        }
+                    }
+                }
+
+                text.GetComponent<TextMesh>().text = formatted;
                 talking = true;
-                customSpeech = speech;
+                customSpeech = formatted;
                 shrinkNOW = false;
                 waiting = 3.0f;
                 temp = transform.localScale;

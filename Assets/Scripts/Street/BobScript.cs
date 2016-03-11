@@ -6,6 +6,7 @@ public class BobScript : MonoBehaviour
     private bool facingRight;
     private float timer;
     private GameObject guy;
+    private bool sayHello;
 
     // Use this for initialization
     void Start()
@@ -19,6 +20,11 @@ public class BobScript : MonoBehaviour
         FaceGuy();
         //RandomFlip();
         HandleFlipping();
+        if(!sayHello)
+        {
+            sayHello = true;
+            GameObject.Find("SpeechBubble").GetComponent<SpeechBubble>().GuySays("Welcome to my happy little shop!");
+        }
     }
 
     private void HandleFlipping()
