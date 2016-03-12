@@ -142,6 +142,7 @@ public class SpeechBubble : MonoBehaviour
                 if(speechQueued)
                 {
                     talking = true;
+                    speechQueued = false;
                     waiting = 3.0f;
                     temp = transform.localScale;
                 }
@@ -152,43 +153,45 @@ public class SpeechBubble : MonoBehaviour
 
     public void GuySays(string speech)
     {
+        string formatted = "";
+        string[] split = speech.Split(' ');
+        int currentLength = 0;
+        for (int i = 0; i < split.Length; i++)
+        {
+            //Punctuation adds almost no length so we ignore it if we have to
+            if (!split[i].Contains("'") || !split[i].Contains(".") || !split[i].Contains(",") || !split[i].Contains("!"))
+            {
+                if (currentLength + split[i].Length >= 18)
+                {
+                    currentLength = split[i].Length + 1;
+                    formatted += "\n" + split[i] + " ";
+                }
+                else
+                {
+                    currentLength += split[i].Length + 1;
+                    formatted += split[i] + " ";
+                }
+            }
+            else
+            {
+                if (currentLength + split[i].Length >= 19)
+                {
+                    currentLength = split[i].Length;
+                    formatted += "\n" + split[i] + " ";
+                }
+                else
+                {
+                    currentLength += split[i].Length;
+                    formatted += split[i] + " ";
+                }
+            }
+        }
+
+
         if (!talking)
         {
             if (!requiredSpeech && !growing && !shrinking && waiting <= 0.0f)
             {
-                string formatted = "";
-                string[] split = speech.Split(' ');
-                int currentLength = 0;
-                for (int i = 0; i < split.Length; i++)
-                {
-                    //Punctuation adds almost no length so we ignore it if we have to
-                    if (!split[i].Contains("'") || !split[i].Contains(".") || !split[i].Contains(",") || !split[i].Contains("!")) 
-                    {
-                        if (currentLength + split[i].Length >= 18)
-                        {
-                            currentLength = split[i].Length + 1;
-                            formatted += "\n" + split[i] + " ";
-                        }
-                        else
-                        {
-                            currentLength += split[i].Length + 1;
-                            formatted += split[i] + " ";
-                        }
-                    }
-                    else
-                    {
-                        if (currentLength + split[i].Length >= 19)
-                        {
-                            currentLength = split[i].Length;
-                            formatted += "\n" + split[i] + " ";
-                        }
-                        else
-                        {
-                            currentLength += split[i].Length;
-                            formatted += split[i] + " ";
-                        }
-                    }
-                }
 
                 text.GetComponent<TextMesh>().text = formatted;
                 talking = true;
@@ -200,6 +203,8 @@ public class SpeechBubble : MonoBehaviour
             else
             {
                 speechQueued = true;
+                customSpeech = formatted;
+
             }
         }
     }

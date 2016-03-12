@@ -26,7 +26,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -38,7 +38,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -46,11 +46,12 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 150
   alphaIsTransparency: 1
@@ -66,8 +67,21 @@ TextureImporter:
         width: 210
         height: 405
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: -155.5}
+        - {x: 52, y: 141.5}
+        - {x: 47, y: 189.5}
+        - {x: -3, y: 189.5}
+        - {x: -62, y: 172.5}
+        - {x: -62, y: 66.5}
+        - {x: -51, y: 37.5}
+        - {x: -47, y: -189.5}
+        - {x: 20, y: -189.5}
+        - {x: 62, y: -174.5}
+        - {x: 62, y: -157.5}
+        - {x: 61, y: -153.5}
     - name: GuyWalk_1
       rect:
         serializedVersion: 2
@@ -76,8 +90,20 @@ TextureImporter:
         width: 210
         height: 405
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 50, y: -120.5}
+        - {x: 52, y: 141.5}
+        - {x: 47, y: 189.5}
+        - {x: -3, y: 189.5}
+        - {x: -62, y: 172.5}
+        - {x: -62, y: 7.5}
+        - {x: -47, y: -189.5}
+        - {x: 20, y: -189.5}
+        - {x: 17, y: -172.5}
+        - {x: 62, y: -173.5}
+        - {x: 62, y: -137.5}
     - name: GuyWalk_2
       rect:
         serializedVersion: 2
@@ -86,8 +112,21 @@ TextureImporter:
         width: 210
         height: 405
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: -155.5}
+        - {x: 52, y: 141.5}
+        - {x: 47, y: 189.5}
+        - {x: -3, y: 189.5}
+        - {x: -62, y: 172.5}
+        - {x: -62, y: 66.5}
+        - {x: -51, y: 37.5}
+        - {x: -47, y: -189.5}
+        - {x: 20, y: -189.5}
+        - {x: 62, y: -174.5}
+        - {x: 62, y: -157.5}
+        - {x: 61, y: -153.5}
     - name: GuyWalk_3
       rect:
         serializedVersion: 2
@@ -96,8 +135,21 @@ TextureImporter:
         width: 210
         height: 405
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 189.5}
+        - {x: 13, y: 187.5}
+        - {x: -46, y: 176.5}
+        - {x: -62, y: 161.5}
+        - {x: -62, y: 82.5}
+        - {x: -61, y: 78.5}
+        - {x: -47, y: -189.5}
+        - {x: 62, y: -189.5}
+        - {x: 62, y: -160.5}
+        - {x: 56, y: -148.5}
+        - {x: 52, y: 180.5}
+        - {x: 30, y: 189.5}
     - name: GuyWalk_4
       rect:
         serializedVersion: 2
@@ -106,8 +158,22 @@ TextureImporter:
         width: 210
         height: 400
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 62, y: 121}
+        - {x: 62, y: 151}
+        - {x: 42, y: 192}
+        - {x: -57, y: 192}
+        - {x: -62, y: 170}
+        - {x: -62, y: -80}
+        - {x: -50, y: -172}
+        - {x: -10, y: -187}
+        - {x: 62, y: -187}
+        - {x: 62, y: -169}
+        - {x: 61, y: -166}
+        - {x: 47, y: -35}
+        - {x: 47, y: 10}
     - name: GuyWalk_5
       rect:
         serializedVersion: 2
@@ -116,8 +182,21 @@ TextureImporter:
         width: 210
         height: 400
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 46, y: 60}
+        - {x: 63, y: 192}
+        - {x: -57, y: 192}
+        - {x: -62, y: 169}
+        - {x: -62, y: -26}
+        - {x: -58, y: -31}
+        - {x: -48, y: -160}
+        - {x: -2, y: -187}
+        - {x: 65, y: -187}
+        - {x: 61, y: -166}
+        - {x: 77, y: -20}
+        - {x: 77, y: 10}
     - name: GuyWalk_6
       rect:
         serializedVersion: 2
@@ -126,8 +205,21 @@ TextureImporter:
         width: 210
         height: 400
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 51, y: 192}
+        - {x: 21, y: 192}
+        - {x: -62, y: 176}
+        - {x: -62, y: 66}
+        - {x: -60, y: 54}
+        - {x: -50, y: -172}
+        - {x: -10, y: -187}
+        - {x: 62, y: -187}
+        - {x: 62, y: -169}
+        - {x: 61, y: -166}
+        - {x: 32, y: -168}
+        - {x: 47, y: -35}
     - name: GuyWalk_7
       rect:
         serializedVersion: 2
@@ -136,8 +228,22 @@ TextureImporter:
         width: 210
         height: 400
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30, y: 192}
+        - {x: 28, y: 190}
+        - {x: -46, y: 179}
+        - {x: -62, y: 164}
+        - {x: -62, y: 85}
+        - {x: -61, y: 81}
+        - {x: -47, y: -187}
+        - {x: 62, y: -187}
+        - {x: 62, y: -166}
+        - {x: 50, y: -148}
+        - {x: 52, y: 144}
+        - {x: 47, y: 192}
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

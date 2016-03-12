@@ -23,7 +23,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -35,7 +35,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 150
   alphaIsTransparency: 1
@@ -64,8 +64,19 @@ TextureImporter:
         width: 150
         height: 405
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 55, y: 189.5}
+        - {x: 2, y: 189.5}
+        - {x: -62, y: 172.5}
+        - {x: -62, y: -44.5}
+        - {x: -54, y: -189.5}
+        - {x: 62, y: -189.5}
+        - {x: 62, y: -171.5}
+        - {x: 61, y: -168.5}
+        - {x: 32, y: -170.5}
+        - {x: 34, y: 62.5}
     - name: Guy 1_1
       rect:
         serializedVersion: 2
@@ -74,8 +85,19 @@ TextureImporter:
         width: 150
         height: 405
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 55, y: 189.5}
+        - {x: 2, y: 189.5}
+        - {x: -62, y: 172.5}
+        - {x: -62, y: -44.5}
+        - {x: -54, y: -189.5}
+        - {x: 62, y: -189.5}
+        - {x: 62, y: -171.5}
+        - {x: 61, y: -168.5}
+        - {x: 32, y: -170.5}
+        - {x: 34, y: 62.5}
     - name: Guy 1_2
       rect:
         serializedVersion: 2
@@ -84,8 +106,21 @@ TextureImporter:
         width: 150
         height: 405
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 55, y: 189.5}
+        - {x: 30, y: 189.5}
+        - {x: 28, y: 187.5}
+        - {x: -46, y: 176.5}
+        - {x: -62, y: 172.5}
+        - {x: -62, y: 36.5}
+        - {x: -47, y: -189.5}
+        - {x: 62, y: -189.5}
+        - {x: 62, y: -171.5}
+        - {x: 61, y: -168.5}
+        - {x: 32, y: -170.5}
+        - {x: 34, y: 62.5}
     - name: Guy 1_3
       rect:
         serializedVersion: 2
@@ -94,8 +129,22 @@ TextureImporter:
         width: 150
         height: 405
       alignment: 9
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 53, y: 175.5}
+        - {x: 30, y: 189.5}
+        - {x: 15, y: 189.5}
+        - {x: 13, y: 187.5}
+        - {x: -46, y: 176.5}
+        - {x: -62, y: 172.5}
+        - {x: -62, y: -10.5}
+        - {x: -47, y: -189.5}
+        - {x: 62, y: -189.5}
+        - {x: 62, y: -171.5}
+        - {x: 61, y: -168.5}
+        - {x: 32, y: -170.5}
+        - {x: 33, y: 60.5}
     - name: Guy 1_4
       rect:
         serializedVersion: 2
@@ -104,8 +153,22 @@ TextureImporter:
         width: 150
         height: 405
       alignment: 9
-      pivot: {x: .500000119, y: .5}
+      pivot: {x: 0.5000001, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 52.999985, y: 175.5}
+        - {x: 29.999985, y: 189.5}
+        - {x: 14.999985, y: 189.5}
+        - {x: 12.999985, y: 187.5}
+        - {x: -46.000015, y: 176.5}
+        - {x: -62.000015, y: 172.5}
+        - {x: -62.000015, y: -10.5}
+        - {x: -47.000015, y: -189.5}
+        - {x: 61.999985, y: -189.5}
+        - {x: 61.999985, y: -171.5}
+        - {x: 60.999985, y: -168.5}
+        - {x: 31.999985, y: -170.5}
+        - {x: 32.999985, y: 60.5}
     - name: Guy 1_5
       rect:
         serializedVersion: 2
@@ -114,8 +177,21 @@ TextureImporter:
         width: 150
         height: 405
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 53, y: 175.5}
+        - {x: 30, y: 189.5}
+        - {x: -6, y: 189.5}
+        - {x: -62, y: 171.5}
+        - {x: -62, y: -44.5}
+        - {x: -54, y: -189.5}
+        - {x: 62, y: -189.5}
+        - {x: 62, y: -171.5}
+        - {x: 61, y: -168.5}
+        - {x: 32, y: -170.5}
+        - {x: 33, y: 60.5}
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

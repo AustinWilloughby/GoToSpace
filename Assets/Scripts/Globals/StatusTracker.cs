@@ -41,6 +41,7 @@ public class StatusTracker : MonoBehaviour
     private SpriteRenderer sky;
 	public List<string> itemsNeeded;
 	public List<string> discoveredItems;
+    public List<string> alreadyCollected;
 
     public Sprite platform;
     public Sprite[] shipProgress;
@@ -124,6 +125,11 @@ public class StatusTracker : MonoBehaviour
     {
         CheckSky();
         UpdateShipSprite();
+
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     public void AdvanceStage()
@@ -134,32 +140,38 @@ public class StatusTracker : MonoBehaviour
         currentSkyColorIndex++;
 
 		itemsNeeded.Clear ();
+        
 
 		switch (currentStage) {
 			//Welding
 		case CurrentlyBuilding.Skeleton:
 			itemsNeeded.Add("Torch");
 			itemsNeeded.Add("MetalRod");
+            alreadyCollected.Remove("Hammer");
 			break;
 			//No Game
 		case CurrentlyBuilding.Interior:
 			itemsNeeded.Add("SocketWrench");
 			itemsNeeded.Add("Bolts");
 			itemsNeeded.Add("CarSeat");
+            alreadyCollected.Remove("Torch");
 			break;
 			//Drilling
 		case CurrentlyBuilding.CrudeExterior:
 			itemsNeeded.Add("SheetMetal");
 			itemsNeeded.Add("Drill");
 			itemsNeeded.Add("Screws");
+            alreadyCollected.Remove("SocketWrench");
 			break;
 			//Sawing
 		case CurrentlyBuilding.AddingFins:
 			itemsNeeded.Add("Saw");
+            alreadyCollected.Remove("Drill");
 			break;
 			//No Game
 		case CurrentlyBuilding.AddingWindow:
 			itemsNeeded.Add("Window");
+            alreadyCollected.Remove("Saw");
 			break;
 			//No Game
 		case CurrentlyBuilding.Painting:
@@ -169,8 +181,11 @@ public class StatusTracker : MonoBehaviour
 			//Fueling
 		case CurrentlyBuilding.Fueling:
 			itemsNeeded.Add("Fuel");
+            alreadyCollected.Remove("PaintRoller");
+            alreadyCollected.Remove("Paint");
 			break;
 		case CurrentlyBuilding.ToSpace:
+            alreadyCollected.Remove("Fuel");
 			break;
 		default:
 			break;

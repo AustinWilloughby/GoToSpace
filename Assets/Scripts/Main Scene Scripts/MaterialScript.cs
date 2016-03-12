@@ -23,9 +23,9 @@ public class MaterialScript : MonoBehaviour
 
         try
         {
-            if (!GameObject.Find("StatusTracker").GetComponent<StatusTracker>().itemsNeeded.Contains(name))
+            if (GameObject.Find("StatusTracker").GetComponent<StatusTracker>().alreadyCollected.Contains(name))
             {
-                //Destroy(gameObject);
+                Destroy(gameObject);
             }
 
             if (!GameObject.Find("StatusTracker").GetComponent<StatusTracker>().discoveredItems.Contains(name) && Application.loadedLevelName == "Workshop")
@@ -63,6 +63,7 @@ public class MaterialScript : MonoBehaviour
                 {
                     GameObject.Find("SpeechBubble").GetComponent<SpeechBubble>().GuySays(dropOffText);
                 }
+                GameObject.Find("StatusTracker").GetComponent<StatusTracker>().alreadyCollected.Add(name);
                 held = false;
                 transform.position = GameObject.Find("Workbench").transform.position;
                 transform.position = transform.position + new Vector3(0, 0, 0.5f);
